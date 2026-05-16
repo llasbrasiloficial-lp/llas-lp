@@ -1,0 +1,78 @@
+/* carousel.css — LLAS */
+
+.carrossel {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Cabeçalho: título + botões de nav ──────────────────── */
+.carrossel__cabecalho {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-inline: var(--padding-lateral);
+  margin-bottom: var(--space-5);
+}
+
+.carrossel__titulo {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--cor-texto);
+}
+
+.carrossel__nav {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.carrossel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-md);
+  color: var(--cor-texto);
+  flex-shrink: 0;
+  transition:
+    border-color var(--transition-padrao),
+    color var(--transition-padrao),
+    background-color var(--transition-padrao);
+}
+
+.carrossel-btn:hover {
+  border-color: var(--cor-texto);
+  color: var(--cor-texto);
+}
+
+.carrossel-btn:disabled {
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+/* ── Track: scroll horizontal com snap ─────────────────── */
+.carrossel__track {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-inline: var(--padding-lateral);
+  padding-bottom: var(--space-3); /* espaço para sombras */
+}
+
+.carrossel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carrossel__track > * {
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .carrossel__track {
+    gap: var(--space-5);
+  }
+}

@@ -1,0 +1,125 @@
+/* product-card.css — LLAS */
+
+.product-card {
+  flex-shrink: 0;
+  width: clamp(190px, 55vw, 260px);
+}
+
+/* ── Imagem ─────────────────────────────────────────────── */
+.product-card__media-link {
+  display: block;
+  overflow: hidden;
+  background-color: var(--cor-bg-alt);
+  transition: background-color var(--transition-tema);
+}
+
+.product-card__media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.product-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    opacity 350ms ease,
+    transform 550ms ease;
+}
+
+.product-card__img--hover {
+  opacity: 0;
+}
+
+/* Hover no card: exibe segunda foto */
+.product-card__media-link:hover .product-card__img--principal {
+  opacity: 0;
+}
+
+.product-card__media-link:hover .product-card__img--hover {
+  opacity: 1;
+}
+
+/* Zoom leve em todas as fotos */
+.product-card__media-link:hover .product-card__img {
+  transform: scale(1.04);
+}
+
+/* ── Corpo ──────────────────────────────────────────────── */
+.product-card__body {
+  padding: var(--space-3) 0 var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.product-card__nome {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--cor-texto);
+  line-height: var(--lh-snug);
+  transition: color var(--transition-padrao);
+}
+
+.product-card__nome:hover {
+  color: var(--cor-acento);
+}
+
+.product-card__preco {
+  font-size: var(--fs-sm);
+  color: var(--cor-texto);
+}
+
+.product-card__preco--em-breve {
+  color: var(--cor-texto-soft);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Swatches ───────────────────────────────────────────── */
+.product-card__swatches {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: var(--space-1);
+}
+
+.swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cor-borda);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition:
+    transform var(--transition-rapida),
+    border-color var(--transition-rapida),
+    outline-color var(--transition-rapida);
+}
+
+.swatch:hover,
+.swatch.is-ativo {
+  transform: scale(1.25);
+  border-color: var(--cor-texto);
+  outline: 1.5px solid var(--cor-texto);
+  outline-offset: 1px;
+}
+
+/* Swatch claro recebe borda mais visível */
+.swatch[style*='#FAFAF7'],
+.swatch[style*='#fafaf7'],
+.swatch[style*='#EDE8DF'] {
+  border-color: var(--cor-borda);
+}
+
+.product-card__mais-cores {
+  font-size: var(--fs-xs);
+  color: var(--cor-texto-soft);
+  padding-left: 2px;
+}

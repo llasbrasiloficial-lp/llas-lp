@@ -25,14 +25,18 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/components/header.css">
   <link rel="stylesheet" href="/css/components/mega-menu.css">
+  <link rel="stylesheet" href="/css/components/hero-slider.css">
+  <link rel="stylesheet" href="/css/components/product-card.css">
+  <link rel="stylesheet" href="/css/components/carousel.css">
   <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/pages/home.css">
 
-  <!-- Tema: aplicado antes da renderização para evitar flash -->
+  <!-- Tema antes da renderização (evita flash) -->
   <script>
     (function () {
-      var salvo = localStorage.getItem('llas-theme');
-      var prefere = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', salvo || prefere);
+      var s = localStorage.getItem('llas-theme');
+      var p = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', s || p);
     })();
   </script>
 </head>
@@ -45,15 +49,8 @@
   <header class="site-header" id="site-header">
     <div class="site-header__inner">
 
-      <!-- Hamburger (mobile) -->
-      <button
-        class="site-header__hamburger"
-        id="nav-toggle"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="mobile-drawer"
-        type="button"
-      >
+      <button class="site-header__hamburger" id="nav-toggle"
+        aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-drawer" type="button">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
           <line x1="2" y1="5"  x2="18" y2="5"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -61,94 +58,55 @@
         </svg>
       </button>
 
-      <!-- Logo -->
       <a href="/" class="site-header__logo" aria-label="LLAS — Início">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="LLAS">
           <title>LLAS</title>
-          <text x="200" y="120"
-                font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
-                font-weight="900"
-                font-size="130"
-                letter-spacing="-2"
-                text-anchor="middle"
-                fill="currentColor">LLAS</text>
-          <text x="200" y="160"
-                font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
-                font-weight="400"
-                font-size="18"
-                letter-spacing="3"
-                text-anchor="middle"
-                fill="currentColor">O BÁSICO REFINADO.</text>
+          <text x="200" y="120" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="130" letter-spacing="-2" text-anchor="middle" fill="currentColor">LLAS</text>
+          <text x="200" y="160" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="18" letter-spacing="3" text-anchor="middle" fill="currentColor">O BÁSICO REFINADO.</text>
         </svg>
       </a>
 
-      <!-- Nav (desktop) -->
       <nav class="site-header__nav" aria-label="Navegação principal">
         <button class="nav-item" data-menu="feminino" aria-expanded="false" aria-haspopup="true" type="button">
           Feminino
-          <svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <button class="nav-item" data-menu="masculino" aria-expanded="false" aria-haspopup="true" type="button">
           Masculino
-          <svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <button class="nav-item" data-menu="colecoes" aria-expanded="false" aria-haspopup="true" type="button">
           Coleções
-          <svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <a href="/sobre" class="nav-item">Sobre</a>
       </nav>
 
-      <!-- Actions: busca + tema + carrinho -->
       <div class="site-header__actions">
         <button class="header-action header-action--search" aria-label="Buscar" type="button">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <circle cx="8.5" cy="8.5" r="5" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="12.5" y1="12.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5" stroke="currentColor" stroke-width="1.5"/><line x1="12.5" y1="12.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
-
-        <button
-          class="header-action"
-          data-theme-toggle
-          aria-label="Ativar modo escuro"
-          aria-pressed="false"
-          type="button"
-        >
-          <!-- Lua: aparece no modo claro (para ir para escuro) -->
-          <svg class="icon-moon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M10 3a7 7 0 1 0 7 7A5 5 0 0 1 10 3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <!-- Sol: aparece no modo escuro (para ir para claro) -->
+        <button class="header-action" data-theme-toggle aria-label="Ativar modo escuro" aria-pressed="false" type="button">
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3a7 7 0 1 0 7 7A5 5 0 0 1 10 3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <svg class="icon-sun" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <circle cx="10" cy="10" r="3.5" stroke="currentColor" stroke-width="1.5"/>
             <line x1="10" y1="2"    x2="10" y2="4.5"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="10" y1="15.5" x2="10" y2="18"   stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="2"   y1="10"  x2="4.5" y2="10"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="15.5" y1="10" x2="18"  y2="10"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2"   y1="10"  x2="4.5"  y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="15.5" y1="10" x2="18"   y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="4.1"  y1="4.1"  x2="5.9"  y2="5.9"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="14.1" y1="14.1" x2="15.9" y2="15.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="4.1"  y1="15.9" x2="5.9"  y2="14.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="14.1" y1="5.9"  x2="15.9" y2="4.1"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </button>
-
         <button class="header-action" aria-label="Carrinho (0 itens)" type="button">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M6.5 7.5V6a3.5 3.5 0 0 1 7 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <rect x="2.5" y="7.5" width="15" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6.5 7.5V6a3.5 3.5 0 0 1 7 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="2.5" y="7.5" width="15" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cart-badge" id="cart-badge" data-count="0" aria-hidden="true"></span>
         </button>
       </div>
 
-    </div><!-- /.site-header__inner -->
+    </div>
 
     <!-- Mega-menu: Feminino -->
     <div class="mega-menu" id="mega-menu-feminino" role="region" aria-label="Menu Feminino">
@@ -157,12 +115,7 @@
           <h2 class="mega-menu__heading">Coleções</h2>
           <ul class="mega-menu__list">
             <li><a href="/feminino/basica" class="mega-menu__link">Básica</a></li>
-            <li>
-              <a href="/feminino/copa-brasil" class="mega-menu__link">
-                Copa Brasil 2026
-                <span class="mega-menu__badge">Sazonal</span>
-              </a>
-            </li>
+            <li><a href="/feminino/copa-brasil" class="mega-menu__link">Copa Brasil 2026 <span class="mega-menu__badge">Sazonal</span></a></li>
             <li><a href="/feminino/brazilidades" class="mega-menu__link">Brazilidades</a></li>
           </ul>
         </div>
@@ -192,12 +145,7 @@
           <h2 class="mega-menu__heading">Coleções</h2>
           <ul class="mega-menu__list">
             <li><a href="/masculino/basica" class="mega-menu__link">Básica</a></li>
-            <li>
-              <a href="/masculino/copa-brasil" class="mega-menu__link">
-                Copa Brasil 2026
-                <span class="mega-menu__badge">Sazonal</span>
-              </a>
-            </li>
+            <li><a href="/masculino/copa-brasil" class="mega-menu__link">Copa Brasil 2026 <span class="mega-menu__badge">Sazonal</span></a></li>
             <li><a href="/masculino/brazilidades" class="mega-menu__link">Brazilidades</a></li>
           </ul>
         </div>
@@ -226,12 +174,7 @@
           <h2 class="mega-menu__heading">Todas as coleções</h2>
           <ul class="mega-menu__list">
             <li><a href="/colecoes/basica" class="mega-menu__link">Básica — permanente</a></li>
-            <li>
-              <a href="/colecoes/copa-brasil" class="mega-menu__link">
-                Copa Brasil 2026
-                <span class="mega-menu__badge">Sazonal</span>
-              </a>
-            </li>
+            <li><a href="/colecoes/copa-brasil" class="mega-menu__link">Copa Brasil 2026 <span class="mega-menu__badge">Sazonal</span></a></li>
             <li><a href="/colecoes/brazilidades" class="mega-menu__link">Brazilidades</a></li>
           </ul>
         </div>
@@ -252,79 +195,38 @@
       </div>
     </div>
 
-  </header><!-- /.site-header -->
+  </header>
 
 
   <!-- ═══════════════════════════════════════════════════════
        DRAWER MOBILE
        ═══════════════════════════════════════════════════════ -->
-  <div
-    class="mobile-drawer"
-    id="mobile-drawer"
-    aria-hidden="true"
-    aria-label="Menu de navegação"
-  >
-    <!-- Backdrop -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true" aria-label="Menu de navegação">
     <div class="mobile-drawer__backdrop" aria-hidden="true"></div>
-
-    <!-- Painel -->
     <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
-
-      <!-- Topo do drawer -->
       <div class="mobile-drawer__header">
         <a href="/" class="mobile-drawer__logo" aria-label="LLAS — Início">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" aria-hidden="true">
-            <text x="200" y="120"
-                  font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
-                  font-weight="900"
-                  font-size="130"
-                  letter-spacing="-2"
-                  text-anchor="middle"
-                  fill="currentColor">LLAS</text>
-            <text x="200" y="160"
-                  font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
-                  font-weight="400"
-                  font-size="18"
-                  letter-spacing="3"
-                  text-anchor="middle"
-                  fill="currentColor">O BÁSICO REFINADO.</text>
+            <text x="200" y="120" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="130" letter-spacing="-2" text-anchor="middle" fill="currentColor">LLAS</text>
+            <text x="200" y="160" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="18" letter-spacing="3" text-anchor="middle" fill="currentColor">O BÁSICO REFINADO.</text>
           </svg>
         </a>
-        <button
-          class="mobile-drawer__close"
-          id="drawer-fechar"
-          aria-label="Fechar menu"
-          type="button"
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <line x1="4" y1="4"   x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="16" y1="4"  x2="4"  y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+        <button class="mobile-drawer__close" id="drawer-fechar" aria-label="Fechar menu" type="button">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="4" y1="4" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="4" x2="4" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
       </div>
-
-      <!-- Nav accordion -->
       <nav class="mobile-drawer__nav" aria-label="Navegação principal">
-
-        <!-- Feminino -->
         <div class="mobile-drawer__item">
-          <button
-            class="mobile-drawer__trigger"
-            aria-expanded="false"
-            aria-controls="drawer-feminino"
-            type="button"
-          >
+          <button class="mobile-drawer__trigger" aria-expanded="false" aria-controls="drawer-feminino" type="button">
             Feminino
-            <svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="mobile-drawer__sub" id="drawer-feminino" hidden>
             <div class="mobile-drawer__sub-group">
               <span class="mobile-drawer__sub-label">Coleções</span>
-              <a href="/feminino/basica"        class="mobile-drawer__sub-link">Básica</a>
-              <a href="/feminino/copa-brasil"   class="mobile-drawer__sub-link">Copa Brasil 2026</a>
-              <a href="/feminino/brazilidades"  class="mobile-drawer__sub-link">Brazilidades</a>
+              <a href="/feminino/basica"       class="mobile-drawer__sub-link">Básica</a>
+              <a href="/feminino/copa-brasil"  class="mobile-drawer__sub-link">Copa Brasil 2026</a>
+              <a href="/feminino/brazilidades" class="mobile-drawer__sub-link">Brazilidades</a>
             </div>
             <div class="mobile-drawer__sub-group">
               <span class="mobile-drawer__sub-label">Modelagens</span>
@@ -334,19 +236,10 @@
             </div>
           </div>
         </div>
-
-        <!-- Masculino -->
         <div class="mobile-drawer__item">
-          <button
-            class="mobile-drawer__trigger"
-            aria-expanded="false"
-            aria-controls="drawer-masculino"
-            type="button"
-          >
+          <button class="mobile-drawer__trigger" aria-expanded="false" aria-controls="drawer-masculino" type="button">
             Masculino
-            <svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="mobile-drawer__sub" id="drawer-masculino" hidden>
             <div class="mobile-drawer__sub-group">
@@ -362,19 +255,10 @@
             </div>
           </div>
         </div>
-
-        <!-- Coleções -->
         <div class="mobile-drawer__item">
-          <button
-            class="mobile-drawer__trigger"
-            aria-expanded="false"
-            aria-controls="drawer-colecoes"
-            type="button"
-          >
+          <button class="mobile-drawer__trigger" aria-expanded="false" aria-controls="drawer-colecoes" type="button">
             Coleções
-            <svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="mobile-drawer__sub" id="drawer-colecoes" hidden>
             <div class="mobile-drawer__sub-group">
@@ -384,54 +268,244 @@
             </div>
           </div>
         </div>
-
-        <!-- Links diretos -->
-        <div class="mobile-drawer__item">
-          <a href="/sobre"   class="mobile-drawer__direct-link">Sobre</a>
-        </div>
-        <div class="mobile-drawer__item">
-          <a href="/algodao" class="mobile-drawer__direct-link">Por que algodão?</a>
-        </div>
-
+        <div class="mobile-drawer__item"><a href="/sobre"   class="mobile-drawer__direct-link">Sobre</a></div>
+        <div class="mobile-drawer__item"><a href="/algodao" class="mobile-drawer__direct-link">Por que algodão?</a></div>
       </nav>
-    </div><!-- /.mobile-drawer__panel -->
-  </div><!-- /.mobile-drawer -->
+    </div>
+  </div>
 
 
   <!-- ═══════════════════════════════════════════════════════
-       MAIN — conteúdo temporário de bootstrap
+       MAIN
        ═══════════════════════════════════════════════════════ -->
   <main>
-    <div style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-      padding: 4rem 1rem;
-      text-align: center;
-    ">
-      <p style="font-size: 0.875rem; color: var(--cor-texto-soft); letter-spacing: 0.04em;">
-        Etapa 2 — <strong style="color: var(--cor-texto); font-weight: 500;">Header + mega-menu + footer</strong>
-      </p>
 
-      <!-- Swatches dos tokens -->
-      <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 0.75rem;
-        width: 100%;
-        max-width: 600px;
-      ">
-        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-bg);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-bg</p></div>
-        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-bg-alt);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-bg-alt</p></div>
-        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-texto);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-texto</p></div>
-        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-texto-soft);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-texto-soft</p></div>
-        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-acento);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-acento</p></div>
-        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-borda);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-borda</p></div>
-        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-erro);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-erro</p></div>
-        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-sucesso);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-sucesso</p></div>
+    <!-- 1. Hero slider ──────────────────────────────────── -->
+    <section class="hero-slider" id="hero-slider" aria-label="Destaques da LLAS" aria-roledescription="carrossel">
+
+      <div class="hero-slider__track">
+
+        <!-- Slide 1: Básica -->
+        <div class="hero-slide hero-slide--escuro is-active" aria-roledescription="slide" aria-label="Slide 1 de 3">
+          <div class="hero-slide__inner">
+            <div class="hero-slide__content">
+              <p class="hero-slide__eyebrow">Coleção Básica — Permanente</p>
+              <h1 class="hero-slide__titulo">O básico refinado.</h1>
+              <p class="hero-slide__subtitulo">Algodão penteado 30/1, 180 g/m². Sem atalhos, sem misturas.</p>
+              <a href="/feminino/basica" class="hero-slide__cta">Explorar coleção</a>
+            </div>
+            <div class="hero-slide__media">
+              <img
+                src="/assets/img/produtos/feminino/basica/gola-alta/algodao-1.webp"
+                alt="Camiseta Básica Gola Alta — Algodão"
+                class="hero-slide__img"
+                loading="eager"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Copa Brasil -->
+        <div class="hero-slide hero-slide--quente" aria-roledescription="slide" aria-label="Slide 2 de 3">
+          <div class="hero-slide__inner">
+            <div class="hero-slide__content">
+              <p class="hero-slide__eyebrow">Copa Brasil 2026</p>
+              <h1 class="hero-slide__titulo">Para o Brasil que torce bem-vestido.</h1>
+              <p class="hero-slide__subtitulo">Estampas da bandeira em algodão 100% penteado.</p>
+              <a href="/feminino/copa-brasil" class="hero-slide__cta hero-slide--claro">Ver coleção</a>
+            </div>
+            <div class="hero-slide__media">
+              <img
+                src="/assets/img/produtos/feminino/copa-brasil/bandeira/algodao-1.webp"
+                alt="Copa Brasil — Bandeira"
+                class="hero-slide__img"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Brazilidades -->
+        <div class="hero-slide hero-slide--tinta" aria-roledescription="slide" aria-label="Slide 3 de 3">
+          <div class="hero-slide__inner">
+            <div class="hero-slide__content">
+              <p class="hero-slide__eyebrow">Brazilidades</p>
+              <h1 class="hero-slide__titulo">Brasil em algodão natural.</h1>
+              <p class="hero-slide__subtitulo">Frutas, plantas e símbolos do Brasil — em estampa botanical.</p>
+              <a href="/feminino/brazilidades" class="hero-slide__cta">Descobrir</a>
+            </div>
+            <div class="hero-slide__media">
+              <img
+                src="/assets/img/produtos/feminino/brazilidades/acai/algodao-1.webp"
+                alt="Brazilidades — Açaí"
+                class="hero-slide__img"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.hero-slider__track -->
+
+      <!-- Dots -->
+      <div class="hero-slider__dots" role="tablist" aria-label="Slides">
+        <button class="hero-slider__dot is-active" data-dot="0" role="tab" aria-selected="true"  aria-label="Slide 1"></button>
+        <button class="hero-slider__dot"           data-dot="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+        <button class="hero-slider__dot"           data-dot="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Arrows -->
+      <button class="hero-slider__arrow hero-slider__arrow--prev" aria-label="Slide anterior" type="button">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="hero-slider__arrow hero-slider__arrow--next" aria-label="Próximo slide" type="button">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+    </section><!-- /.hero-slider -->
+
+
+    <!-- 2. Barra de benefícios ──────────────────────────── -->
+    <div class="benefits-bar" role="list" aria-label="Benefícios">
+      <div class="benefits-bar__item" role="listitem">
+        <svg class="benefits-bar__icone" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1L1 5.3l4.2-.7L7 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        Algodão 100% natural
+      </div>
+      <div class="benefits-bar__item" role="listitem">
+        <svg class="benefits-bar__icone" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1" y="4" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 4V3a2.5 2.5 0 0 1 5 0v1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Frete grátis a partir de R$ 299
+      </div>
+      <div class="benefits-bar__item" role="listitem">
+        <svg class="benefits-bar__icone" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7a5 5 0 1 0 10 0A5 5 0 0 0 2 7z" stroke="currentColor" stroke-width="1.2"/><path d="M7 4.5V7l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Troca em até 30 dias
+      </div>
+      <div class="benefits-bar__item" role="listitem">
+        <svg class="benefits-bar__icone" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2v10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Desconto no PIX
       </div>
     </div>
+
+
+    <!-- 3. Grid de coleções ─────────────────────────────── -->
+    <section class="colecoes-grid" aria-labelledby="colecoes-titulo">
+      <div class="colecoes-grid__cabecalho">
+        <h2 class="colecoes-grid__titulo" id="colecoes-titulo">Nossas coleções</h2>
+        <a href="/colecoes" class="colecoes-grid__ver-todas">Ver todas →</a>
+      </div>
+      <div class="colecoes-grid__cards" id="colecoes-cards" aria-live="polite">
+        <!-- Populado por home.js -->
+      </div>
+    </section>
+
+
+    <!-- 4. Carrossel de produtos ────────────────────────── -->
+    <section class="produtos-carrossel carrossel" aria-labelledby="produtos-titulo">
+      <div class="carrossel__cabecalho">
+        <h2 class="carrossel__titulo" id="produtos-titulo">Lançamentos</h2>
+        <div class="carrossel__nav" aria-label="Navegação do carrossel">
+          <button class="carrossel-btn" id="produtos-prev" aria-label="Ver produtos anteriores" type="button">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2.5L4.5 7 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="carrossel-btn" id="produtos-next" aria-label="Ver mais produtos" type="button">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2.5L9.5 7 5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="carrossel__track" id="produtos-track" aria-live="polite">
+        <!-- Populado por home.js -->
+      </div>
+    </section>
+
+
+    <!-- 5. Por que algodão ──────────────────────────────── -->
+    <section class="algodao-callout" aria-labelledby="algodao-titulo">
+      <div class="algodao-callout__inner">
+        <div>
+          <p class="algodao-callout__eyebrow">Por que algodão</p>
+          <h2 class="algodao-callout__titulo" id="algodao-titulo">A roupa é uma segunda pele.</h2>
+          <p class="algodao-callout__texto">
+            Algodão respira. Algodão dura. Algodão não precisa de acabamentos
+            químicos para fazer o que se espera dele — vestir bem.
+          </p>
+          <p class="algodao-callout__texto">
+            Trabalhamos com algodão penteado 30/1, gramatura 180 g/m²,
+            sem misturas sintéticas e sem tratamentos químicos de easy-care.
+          </p>
+          <a href="/algodao" class="algodao-callout__link">
+            Saiba mais sobre essa escolha
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <!-- Espaço para foto futura -->
+        <div class="algodao-callout__visual" aria-hidden="true"></div>
+      </div>
+    </section>
+
+
+    <!-- 6. Manifesto ────────────────────────────────────── -->
+    <section class="manifesto-home" aria-label="Manifesto LLAS">
+      <div class="manifesto-home__inner">
+        <blockquote class="manifesto-home__citacao">
+          "A LLAS nasce da convicção de que uma camiseta excelente não precisa de atalhos."
+        </blockquote>
+        <p class="manifesto-home__sub">Algodão penteado. Sem misturas. Fabricado em Goiânia, GO.</p>
+        <a href="/sobre" class="manifesto-home__link">Conheça a marca →</a>
+      </div>
+    </section>
+
+
+    <!-- 7. FAQ curto ────────────────────────────────────── -->
+    <section class="faq-home" aria-labelledby="faq-titulo">
+      <div class="faq-home__cabecalho">
+        <h2 class="faq-home__titulo" id="faq-titulo">Perguntas frequentes</h2>
+        <a href="/faq" class="faq-home__ver-todas">Ver todas →</a>
+      </div>
+
+      <div class="faq-home__lista">
+
+        <div class="faq-item">
+          <button class="faq-item__pergunta" aria-expanded="false" type="button">
+            O que é algodão penteado?
+            <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-item__resposta">
+            <p>O algodão penteado passa por um processo extra de remoção de fibras curtas e impurezas. O resultado é um fio mais longo, mais regular e mais resistente — o que se traduz em tecido com toque mais macio, superfície mais lisa e maior durabilidade. É o padrão das camisetas de qualidade premium no mundo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__pergunta" aria-expanded="false" type="button">
+            Como lavar e conservar as peças?
+            <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-item__resposta">
+            <p>Lavar à máquina em ciclo delicado, água fria (30°C máximo). Virar a peça ao avesso antes de lavar. Não usar alvejante. Secar à sombra ou em secadora em temperatura baixa. Passar com ferro médio se necessário. O algodão é naturalmente resistente — o cuidado básico é suficiente para anos de uso.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__pergunta" aria-expanded="false" type="button">
+            Como funciona o frete?
+            <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-item__resposta">
+            <p>Frete grátis para compras acima de R$ 299. Abaixo desse valor, o frete é calculado no checkout com base no CEP de entrega. Enviamos para todo o Brasil via Correios e transportadoras parceiras.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__pergunta" aria-expanded="false" type="button">
+            Como funciona a troca e devolução?
+            <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-item__resposta">
+            <p>Aceitamos trocas e devoluções em até 30 dias após o recebimento, para peças em perfeito estado e com etiqueta original. O processo é simples: basta entrar em contato pelo e-mail ou WhatsApp da marca. <a href="/trocas">Veja a política completa de trocas →</a></p>
+          </div>
+        </div>
+
+      </div><!-- /.faq-home__lista -->
+    </section>
+
   </main>
 
 
@@ -440,34 +514,15 @@
        ═══════════════════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-
-      <!-- Missão -->
       <div>
         <a href="/" class="site-footer__logo" aria-label="LLAS — Início">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" aria-hidden="true">
-            <text x="200" y="120"
-                  font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
-                  font-weight="900"
-                  font-size="130"
-                  letter-spacing="-2"
-                  text-anchor="middle"
-                  fill="currentColor">LLAS</text>
-            <text x="200" y="160"
-                  font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
-                  font-weight="400"
-                  font-size="18"
-                  letter-spacing="3"
-                  text-anchor="middle"
-                  fill="currentColor">O BÁSICO REFINADO.</text>
+            <text x="200" y="120" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="130" letter-spacing="-2" text-anchor="middle" fill="currentColor">LLAS</text>
+            <text x="200" y="160" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="18" letter-spacing="3" text-anchor="middle" fill="currentColor">O BÁSICO REFINADO.</text>
           </svg>
         </a>
-        <p class="site-footer__desc">
-          Camisetas básicas em algodão 100% penteado. Fabricadas em Goiânia, GO.
-          Sem misturas sintéticas, sem acabamentos químicos.
-        </p>
+        <p class="site-footer__desc">Camisetas básicas em algodão 100% penteado. Fabricadas em Goiânia, GO. Sem misturas sintéticas, sem acabamentos químicos.</p>
       </div>
-
-      <!-- Atendimento -->
       <div>
         <h3 class="site-footer__heading">Atendimento</h3>
         <ul class="site-footer__links">
@@ -475,8 +530,6 @@
           <li><a href="#">WhatsApp</a></li>
         </ul>
       </div>
-
-      <!-- Informações -->
       <div>
         <h3 class="site-footer__heading">Informações</h3>
         <ul class="site-footer__links">
@@ -486,8 +539,6 @@
           <li><a href="/faq">Perguntas frequentes</a></li>
         </ul>
       </div>
-
-      <!-- A marca -->
       <div>
         <h3 class="site-footer__heading">A marca</h3>
         <ul class="site-footer__links">
@@ -496,24 +547,21 @@
           <li><a href="/colecoes">Coleções</a></li>
         </ul>
       </div>
-
-    </div><!-- /.site-footer__inner -->
-
+    </div>
     <div class="site-footer__bottom">
       <div class="site-footer__bottom-inner">
-        <p class="site-footer__legal">
-          © 2026 LLAS INDÚSTRIA E COMÉRCIO DE ROUPAS LTDA. CNPJ 66.740.417/0001-07
-        </p>
+        <p class="site-footer__legal">© 2026 LLAS INDÚSTRIA E COMÉRCIO DE ROUPAS LTDA. CNPJ 66.740.417/0001-07</p>
         <p class="site-footer__tagline">O básico refinado.</p>
       </div>
     </div>
-
-  </footer><!-- /.site-footer -->
+  </footer>
 
 
   <!-- JS -->
   <script type="module" src="/js/theme-toggle.js"></script>
   <script type="module" src="/js/mega-menu.js"></script>
+  <script type="module" src="/js/hero-slider.js"></script>
+  <script type="module" src="/js/home.js"></script>
 
 </body>
 </html>

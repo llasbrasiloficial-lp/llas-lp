@@ -1,0 +1,210 @@
+/* hero-slider.css — LLAS */
+
+/* ── Container ──────────────────────────────────────────── */
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--cor-bg);
+  transition: background-color var(--transition-tema);
+}
+
+.hero-slider__track {
+  position: relative;
+  min-height: clamp(420px, 72vh, 720px);
+}
+
+/* ── Slides: opacity crossfade ──────────────────────────── */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 700ms ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Inner: layout em 2 colunas (texto + foto) */
+.hero-slide__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-9) var(--padding-lateral);
+  gap: var(--space-6);
+  min-height: clamp(420px, 72vh, 720px);
+}
+
+/* ── Conteúdo de texto ──────────────────────────────────── */
+.hero-slide__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 560px;
+}
+
+.hero-slide__eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.hero-slide__titulo {
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+}
+
+.hero-slide__subtitulo {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-snug);
+  opacity: 0.75;
+  max-width: 380px;
+}
+
+/* CTA do slide */
+.hero-slide__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: flex-start;
+  padding: var(--space-3) var(--space-6);
+  border: 1.5px solid currentColor;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    background-color var(--transition-padrao),
+    color var(--transition-padrao),
+    border-color var(--transition-padrao);
+}
+
+.hero-slide--escuro .hero-slide__cta:hover {
+  background-color: #FAFAF7;
+  color: #0D0D0D;
+  border-color: #FAFAF7;
+}
+
+.hero-slide--claro .hero-slide__cta:hover {
+  background-color: #0D0D0D;
+  color: #FAFAF7;
+  border-color: #0D0D0D;
+}
+
+/* ── Foto do produto (desktop) ──────────────────────────── */
+.hero-slide__media {
+  display: none;
+  align-self: stretch;
+  overflow: hidden;
+  max-height: clamp(380px, 65vh, 660px);
+}
+
+.hero-slide__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ── Variantes de cor por slide ─────────────────────────── */
+.hero-slide--escuro {
+  background-color: var(--cor-texto);
+  color: var(--cor-bg);
+}
+
+/* Slide quente: off-white terroso — funciona em ambos os temas */
+.hero-slide--quente {
+  background-color: #EDE8DF;
+  color: #0D0D0D;
+}
+
+/* Slide tinta: azul-marinho */
+.hero-slide--tinta {
+  background-color: #1B2A4A;
+  color: #FAFAF7;
+}
+
+/* ── Dots de navegação ──────────────────────────────────── */
+.hero-slider__dots {
+  position: absolute;
+  bottom: var(--space-5);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-2);
+  z-index: 2;
+}
+
+.hero-slider__dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 3px;
+  background-color: currentColor;
+  opacity: 0.35;
+  transition:
+    opacity var(--transition-padrao),
+    width var(--transition-padrao);
+}
+
+.hero-slider__dot.is-active {
+  opacity: 0.9;
+  width: 22px;
+}
+
+/* ── Setas prev/next ────────────────────────────────────── */
+.hero-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid currentColor;
+  color: currentColor;
+  opacity: 0.45;
+  transition: opacity var(--transition-padrao);
+}
+
+.hero-slider__arrow:hover {
+  opacity: 1;
+}
+
+.hero-slider__arrow--prev { left: var(--padding-lateral); }
+.hero-slider__arrow--next { right: var(--padding-lateral); }
+
+/* ── Desktop ────────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .hero-slide__inner {
+    grid-template-columns: 1fr 380px;
+  }
+
+  .hero-slide__media {
+    display: flex;
+  }
+
+  .hero-slider__arrow {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-slide__inner {
+    grid-template-columns: 1fr 460px;
+  }
+}

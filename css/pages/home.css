@@ -1,0 +1,379 @@
+/* home.css — LLAS — Seções específicas da home */
+
+/* ── Barra de benefícios ────────────────────────────────── */
+.benefits-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-7);
+  padding: var(--space-3) var(--padding-lateral);
+  background-color: var(--cor-bg-alt);
+  border-bottom: 1px solid var(--cor-borda);
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-tema),
+    border-color var(--transition-tema);
+}
+
+.benefits-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.benefits-bar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cor-texto-soft);
+}
+
+.benefits-bar__icone {
+  color: var(--cor-acento);
+  flex-shrink: 0;
+}
+
+/* ── Grid de coleções ───────────────────────────────────── */
+.colecoes-grid {
+  padding: var(--space-9) var(--padding-lateral);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.colecoes-grid__cabecalho {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.colecoes-grid__titulo {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+
+.colecoes-grid__ver-todas {
+  font-size: var(--fs-sm);
+  color: var(--cor-acento);
+  transition: color var(--transition-padrao);
+}
+
+.colecoes-grid__ver-todas:hover {
+  color: var(--cor-texto);
+}
+
+.colecoes-grid__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .colecoes-grid__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Colecao card */
+.colecao-card {
+  display: block;
+  overflow: hidden;
+  background-color: var(--cor-bg-alt);
+  transition: background-color var(--transition-tema);
+}
+
+.colecao-card__media {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.colecao-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 600ms ease;
+}
+
+.colecao-card:hover .colecao-card__img {
+  transform: scale(1.04);
+}
+
+.colecao-card__body {
+  padding: var(--space-4) 0 var(--space-2);
+}
+
+.colecao-card__nome {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--cor-texto);
+  margin-bottom: var(--space-2);
+}
+
+.colecao-card__badge {
+  display: inline-block;
+  margin-left: var(--space-2);
+  padding: 1px 6px;
+  background-color: var(--cor-bg);
+  border: 1px solid var(--cor-borda);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-regular);
+  color: var(--cor-texto-soft);
+  vertical-align: middle;
+  transition:
+    background-color var(--transition-tema),
+    border-color var(--transition-tema);
+}
+
+.colecao-card__manifesto {
+  font-size: var(--fs-sm);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-3);
+}
+
+.colecao-card__link {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-acento);
+  transition: color var(--transition-padrao);
+}
+
+.colecao-card:hover .colecao-card__link {
+  color: var(--cor-texto);
+}
+
+/* ── Carrossel de produtos ──────────────────────────────── */
+.produtos-carrossel {
+  padding-block: var(--space-9);
+  border-top: 1px solid var(--cor-borda);
+  overflow: hidden;
+  transition: border-color var(--transition-tema);
+}
+
+/* ── Callout "Por que algodão" ──────────────────────────── */
+.algodao-callout {
+  padding: var(--space-9) var(--padding-lateral);
+  background-color: var(--cor-bg-alt);
+  border-top: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+  transition:
+    background-color var(--transition-tema),
+    border-color var(--transition-tema);
+}
+
+.algodao-callout__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .algodao-callout__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.algodao-callout__eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-texto-soft);
+  margin-bottom: var(--space-4);
+}
+
+.algodao-callout__titulo {
+  font-family: var(--ff-editorial);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-5);
+}
+
+.algodao-callout__texto {
+  font-size: var(--fs-base);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.algodao-callout__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--cor-acento);
+  transition:
+    color var(--transition-padrao),
+    gap var(--transition-padrao);
+}
+
+.algodao-callout__link:hover {
+  color: var(--cor-texto);
+  gap: var(--space-3);
+}
+
+/* Segundo col: sem conteúdo agora — espaço para foto futura */
+.algodao-callout__visual {
+  display: none;
+  aspect-ratio: 4 / 5;
+  background-color: var(--cor-bg);
+  overflow: hidden;
+  transition: background-color var(--transition-tema);
+}
+
+.algodao-callout__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .algodao-callout__visual {
+    display: block;
+  }
+}
+
+/* ── Manifesto ──────────────────────────────────────────── */
+.manifesto-home {
+  padding: var(--space-10) var(--padding-lateral);
+  text-align: center;
+  border-bottom: 1px solid var(--cor-borda);
+  transition: border-color var(--transition-tema);
+}
+
+.manifesto-home__inner {
+  max-width: var(--max-width-texto);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.manifesto-home__citacao {
+  font-family: var(--ff-editorial);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: var(--fw-regular);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--cor-texto);
+}
+
+.manifesto-home__sub {
+  font-size: var(--fs-sm);
+  color: var(--cor-texto-soft);
+  letter-spacing: 0.04em;
+}
+
+.manifesto-home__link {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--cor-acento);
+  letter-spacing: 0.04em;
+  transition: color var(--transition-padrao);
+}
+
+.manifesto-home__link:hover {
+  color: var(--cor-texto);
+}
+
+/* ── FAQ curto ──────────────────────────────────────────── */
+.faq-home {
+  padding: var(--space-9) var(--padding-lateral);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.faq-home__cabecalho {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.faq-home__titulo {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+
+.faq-home__ver-todas {
+  font-size: var(--fs-sm);
+  color: var(--cor-acento);
+  transition: color var(--transition-padrao);
+}
+
+.faq-home__ver-todas:hover {
+  color: var(--cor-texto);
+}
+
+/* FAQ accordion */
+.faq-home__lista {
+  border-top: 1px solid var(--cor-borda);
+  transition: border-color var(--transition-tema);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--cor-borda);
+  transition: border-color var(--transition-tema);
+}
+
+.faq-item__pergunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-5) 0;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--cor-texto);
+  text-align: left;
+  transition: color var(--transition-padrao);
+}
+
+.faq-item__pergunta:hover {
+  color: var(--cor-acento);
+}
+
+.faq-item__icon {
+  flex-shrink: 0;
+  color: var(--cor-texto-soft);
+  transition:
+    transform var(--transition-padrao),
+    color var(--transition-padrao);
+}
+
+.faq-item.is-open .faq-item__icon {
+  transform: rotate(45deg);
+  color: var(--cor-texto);
+}
+
+.faq-item__resposta {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 400ms ease;
+}
+
+.faq-item.is-open .faq-item__resposta {
+  max-height: 500px;
+}
+
+.faq-item__resposta p {
+  padding-bottom: var(--space-5);
+  font-size: var(--fs-base);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  max-width: var(--max-width-texto);
+}
