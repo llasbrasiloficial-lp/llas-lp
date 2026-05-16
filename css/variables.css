@@ -1,0 +1,95 @@
+/* variables.css — LLAS — Design tokens */
+
+/* ─── Modo claro (padrão) ─────────────────────────────────── */
+:root {
+  /* Cores de interface */
+  --cor-bg:          #FAFAF7;
+  --cor-bg-alt:      #F2F0EA;
+  --cor-texto:       #0D0D0D;
+  --cor-texto-soft:  #2C2C2C;
+  --cor-borda:       #E8E5DE;
+  --cor-acento:      #7A6E5D;
+  --cor-erro:        #8B2C2C;
+  --cor-sucesso:     #3E5C3A;
+
+  /* Tipografia */
+  --ff-principal: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --ff-editorial: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+
+  --fs-xs:   0.75rem;    /*  12px */
+  --fs-sm:   0.875rem;   /*  14px */
+  --fs-base: 1rem;       /*  16px */
+  --fs-md:   1.25rem;    /*  20px */
+  --fs-lg:   2rem;       /*  32px */
+  --fs-xl:   3.5rem;     /*  56px */
+  --fs-hero: clamp(3rem, 8vw, 6rem);
+
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+  --fw-black:   900;
+
+  --lh-tight:  1.1;
+  --lh-snug:   1.3;
+  --lh-base:   1.5;
+  --lh-relaxed: 1.7;
+
+  /* Espaçamentos */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.5rem;    /* 24px */
+  --space-6:  2rem;      /* 32px */
+  --space-7:  3rem;      /* 48px */
+  --space-8:  4rem;      /* 64px */
+  --space-9:  6rem;      /* 96px */
+  --space-10: 8rem;      /* 128px */
+
+  /* Layout */
+  --max-width:        1280px;
+  --max-width-texto:  720px;
+  --padding-lateral:  clamp(1rem, 4vw, 2rem);
+
+  /* Bordas */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Transições */
+  --transition-rapida:  150ms ease;
+  --transition-padrao:  250ms ease;
+  --transition-lenta:   400ms ease;
+  --transition-tema:    300ms ease;
+
+  /* Sombras */
+  --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --sombra-lg: 0 8px 32px rgba(0, 0, 0, 0.10);
+
+  /* Z-index */
+  --z-base:      0;
+  --z-elevado:   10;
+  --z-header:    100;
+  --z-mega-menu: 200;
+  --z-side-cart: 300;
+  --z-modal:     400;
+  --z-topo:      500;
+}
+
+/* ─── Modo escuro ─────────────────────────────────────────── */
+[data-theme="dark"] {
+  --cor-bg:         #0D0D0D;
+  --cor-bg-alt:     #161616;
+  --cor-texto:      #FAFAF7;
+  --cor-texto-soft: #C9C7C0;
+  --cor-borda:      #2A2A2A;
+  --cor-acento:     #C9B79C;
+  --cor-erro:       #C97070;
+  --cor-sucesso:    #8AB585;
+
+  --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.30);
+  --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.40);
+  --sombra-lg: 0 8px 32px rgba(0, 0, 0, 0.50);
+}

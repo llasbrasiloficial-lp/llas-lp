@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LLAS — O básico refinado | Camisetas 100% algodão</title>
+  <meta name="description" content="Camisetas básicas em algodão 100% penteado. Sem misturas sintéticas, sem acabamentos químicos. Fabricadas em Goiânia, GO.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LLAS — O básico refinado">
+  <meta property="og:description" content="Camisetas básicas em algodão 100% penteado. Sem misturas, sem atalhos.">
+  <meta property="og:image" content="https://llasoficial.com.br/assets/img/og/default.jpg">
+  <meta property="og:url" content="https://llasoficial.com.br/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://llasoficial.com.br/">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/variables.css">
+
+  <style>
+    /* Estilos inline temporários do bootstrap — migrar para style.css na Etapa 2 */
+
+    html {
+      transition:
+        background-color var(--transition-tema),
+        color var(--transition-tema);
+    }
+
+    body {
+      font-family: var(--ff-principal);
+      font-size: var(--fs-base);
+      font-weight: var(--fw-regular);
+      color: var(--cor-texto);
+      background-color: var(--cor-bg);
+      line-height: var(--lh-base);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-7);
+      padding: var(--padding-lateral);
+    }
+
+    /* Logo */
+    .logo {
+      width: 180px;
+      color: var(--cor-texto);
+      transition: color var(--transition-tema);
+    }
+
+    @media (min-width: 768px) {
+      .logo { width: 240px; }
+    }
+
+    /* Toggle de tema */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-5);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-md);
+      color: var(--cor-texto-soft);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      letter-spacing: 0.04em;
+      transition:
+        border-color var(--transition-padrao),
+        color var(--transition-padrao),
+        background-color var(--transition-padrao);
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      color: var(--cor-texto);
+      border-color: var(--cor-acento);
+      outline: none;
+    }
+
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--cor-acento);
+      outline-offset: 3px;
+    }
+
+    .theme-toggle__icon {
+      font-size: var(--fs-base);
+      line-height: 1;
+    }
+
+    /* Painel de tokens — visível apenas nesta etapa de bootstrap */
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: var(--space-3);
+      width: 100%;
+      max-width: 640px;
+    }
+
+    .token-swatch {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .token-swatch__cor {
+      height: 40px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--cor-borda);
+      transition: border-color var(--transition-tema);
+    }
+
+    .token-swatch__nome {
+      font-size: var(--fs-xs);
+      color: var(--cor-texto-soft);
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Divisor */
+    .divisor {
+      width: 40px;
+      height: 1px;
+      background-color: var(--cor-borda);
+      transition: background-color var(--transition-tema);
+    }
+
+    /* Texto de status */
+    .status {
+      font-size: var(--fs-sm);
+      color: var(--cor-texto-soft);
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    .status strong {
+      color: var(--cor-texto);
+      font-weight: var(--fw-medium);
+    }
+  </style>
+
+  <!-- Tema: aplicado antes da renderização para evitar flash -->
+  <script>
+    (function() {
+      var salvo = localStorage.getItem('llas-theme');
+      var prefere = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', salvo || prefere);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- Logo LLAS -->
+  <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="LLAS — O básico refinado.">
+    <title>LLAS</title>
+    <desc>O básico refinado.</desc>
+    <text x="200" y="120"
+          font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+          font-weight="900"
+          font-size="130"
+          letter-spacing="-2"
+          text-anchor="middle"
+          fill="currentColor">LLAS</text>
+    <text x="200" y="160"
+          font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+          font-weight="400"
+          font-size="18"
+          letter-spacing="3"
+          text-anchor="middle"
+          fill="currentColor">O BÁSICO REFINADO.</text>
+  </svg>
+
+  <div class="divisor" aria-hidden="true"></div>
+
+  <!-- Toggle de tema -->
+  <button
+    class="theme-toggle"
+    data-theme-toggle
+    aria-label="Ativar modo escuro"
+    aria-pressed="false"
+    type="button"
+  >
+    <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+    <span class="theme-toggle__label">Alternar tema</span>
+  </button>
+
+  <!-- Painel de tokens (visível durante o bootstrap) -->
+  <div class="token-grid" role="list" aria-label="Paleta de cores da interface">
+    <div class="token-swatch" role="listitem">
+      <div class="token-swatch__cor" style="background-color: var(--cor-bg);" title="--cor-bg"></div>
+      <span class="token-swatch__nome">--cor-bg</span>
+    </div>
+    <div class="token-swatch" role="listitem">
+      <div class="token-swatch__cor" style="background-color: var(--cor-bg-alt);" title="--cor-bg-alt"></div>
+      <span class="token-swatch__nome">--cor-bg-alt</span>
+    </div>
+    <div class="token-swatch" role="listitem">
+      <div class="token-swatch__cor" style="background-color: var(--cor-texto);" title="--cor-texto"></div>
+      <span class="token-swatch__nome">--cor-texto</span>
+    </div>
+    <div class="token-swatch" role="listitem">
+      <div class="token-swatch__cor" style="background-color: var(--cor-texto-soft);" title="--cor-texto-soft"></div>
+      <span class="token-swatch__nome">--cor-texto-soft</span>
+    </div>
+    <div class="token-swatch" role="listitem">
+      <div class="token-swatch__cor" style="background-color: var(--cor-borda);" title="--cor-borda"></div>
+      <span class="token-swatch__nome">--cor-borda</span>
+    </div>
+    <div class="token-swatch" role="listitem">
+      <div class="token-swatch__cor" style="background-color: var(--cor-acento);" title="--cor-acento"></div>
+      <span class="token-swatch__nome">--cor-acento</span>
+    </div>
+    <div class="token-swatch" role="listitem">
+      <div class="token-swatch__cor" style="background-color: var(--cor-erro);" title="--cor-erro"></div>
+      <span class="token-swatch__nome">--cor-erro</span>
+    </div>
+    <div class="token-swatch" role="listitem">
+      <div class="token-swatch__cor" style="background-color: var(--cor-sucesso);" title="--cor-sucesso"></div>
+      <span class="token-swatch__nome">--cor-sucesso</span>
+    </div>
+  </div>
+
+  <p class="status">
+    Etapa 1 — <strong>Bootstrap</strong>. Design tokens + tema claro/escuro funcionando.
+  </p>
+
+  <!-- JS -->
+  <script type="module" src="/js/theme-toggle.js"></script>
+
+</body>
+</html>
