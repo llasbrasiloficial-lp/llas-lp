@@ -1,0 +1,320 @@
+/* institucional.css — LLAS — Páginas institucionais compartilhadas */
+
+/* ── Hero da página ─────────────────────────────────────── */
+.inst-hero {
+  padding: var(--space-9) var(--padding-lateral) var(--space-7);
+  border-bottom: 1px solid var(--cor-borda);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  transition: border-color var(--transition-tema);
+}
+
+.inst-hero__eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-texto-soft);
+  margin-bottom: var(--space-4);
+}
+
+.inst-hero__titulo {
+  font-family: var(--ff-editorial);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-5);
+}
+
+.inst-hero__subtitulo {
+  font-size: var(--fs-md);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  max-width: 600px;
+}
+
+/* ── Conteúdo principal ─────────────────────────────────── */
+.inst-conteudo {
+  max-width: var(--max-width-texto);
+  margin: 0 auto;
+  padding: var(--space-8) var(--padding-lateral) var(--space-9);
+}
+
+.inst-conteudo--largo {
+  max-width: var(--max-width);
+}
+
+/* ── Seção de conteúdo ──────────────────────────────────── */
+.inst-secao {
+  margin-bottom: var(--space-8);
+}
+
+.inst-secao:last-child {
+  margin-bottom: 0;
+}
+
+.inst-secao__titulo {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-5);
+  letter-spacing: -0.01em;
+}
+
+.inst-secao__subtitulo {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.inst-secao__texto {
+  font-size: var(--fs-base);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.inst-secao__texto:last-child {
+  margin-bottom: 0;
+}
+
+.inst-secao__texto strong {
+  color: var(--cor-texto);
+  font-weight: var(--fw-medium);
+}
+
+.inst-secao__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-left: var(--space-5);
+}
+
+.inst-secao__lista li {
+  font-size: var(--fs-base);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  list-style: disc;
+}
+
+.inst-secao__lista li strong {
+  color: var(--cor-texto);
+  font-weight: var(--fw-medium);
+}
+
+/* ── Grid de valores / diferenciais ─────────────────────── */
+.inst-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .inst-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.inst-grid__item {}
+
+.inst-grid__titulo {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-2);
+}
+
+.inst-grid__texto {
+  font-size: var(--fs-sm);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Citação editorial ──────────────────────────────────── */
+.inst-citacao {
+  font-family: var(--ff-editorial);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: var(--fw-regular);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--cor-texto);
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+  margin: var(--space-7) 0;
+  transition: border-color var(--transition-tema);
+}
+
+/* ── Divisor ─────────────────────────────────────────────── */
+.inst-divisor {
+  border: none;
+  border-top: 1px solid var(--cor-borda);
+  margin: var(--space-8) 0;
+  transition: border-color var(--transition-tema);
+}
+
+/* ── Disclaimer obrigatório ─────────────────────────────── */
+.inst-disclaimer {
+  padding: var(--space-5);
+  border: 1px solid var(--cor-borda);
+  font-size: var(--fs-sm);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  margin-top: var(--space-7);
+  transition: border-color var(--transition-tema);
+}
+
+/* ── Fonte/atribuição ───────────────────────────────────── */
+.inst-fonte {
+  font-size: var(--fs-xs);
+  color: var(--cor-texto-soft);
+  opacity: 0.7;
+  margin-top: var(--space-2);
+}
+
+/* ── CTA link ────────────────────────────────────────────── */
+.inst-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--cor-acento);
+  margin-top: var(--space-4);
+  transition: color var(--transition-padrao), gap var(--transition-padrao);
+}
+
+.inst-cta:hover {
+  color: var(--cor-texto);
+  gap: var(--space-3);
+}
+
+/* ── FAQ por categorias ─────────────────────────────────── */
+.faq-categorias {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+
+.faq-categoria__titulo {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-texto-soft);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--cor-borda);
+  transition: border-color var(--transition-tema);
+}
+
+/* FAQ accordion (reutiliza as mesmas classes do home.css) */
+.faq-lista {
+  border-top: 1px solid var(--cor-borda);
+  transition: border-color var(--transition-tema);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--cor-borda);
+  transition: border-color var(--transition-tema);
+}
+
+.faq-item__pergunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-5) 0;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--cor-texto);
+  text-align: left;
+  transition: color var(--transition-padrao);
+}
+
+.faq-item__pergunta:hover {
+  color: var(--cor-acento);
+}
+
+.faq-item__icon {
+  flex-shrink: 0;
+  color: var(--cor-texto-soft);
+  transition: transform var(--transition-padrao), color var(--transition-padrao);
+}
+
+.faq-item.is-open .faq-item__icon {
+  transform: rotate(45deg);
+  color: var(--cor-texto);
+}
+
+.faq-item__resposta {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 400ms ease;
+}
+
+.faq-item.is-open .faq-item__resposta {
+  max-height: 600px;
+}
+
+.faq-item__resposta p {
+  padding-bottom: var(--space-5);
+  font-size: var(--fs-base);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+}
+
+.faq-item__resposta a {
+  color: var(--cor-acento);
+  transition: color var(--transition-padrao);
+}
+
+.faq-item__resposta a:hover {
+  color: var(--cor-texto);
+}
+
+/* ── Política / termos: estrutura simples ───────────────── */
+.politica-conteudo {
+  max-width: var(--max-width-texto);
+  margin: 0 auto;
+  padding: var(--space-7) var(--padding-lateral) var(--space-9);
+}
+
+.politica-conteudo h2 {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.politica-conteudo h2:first-child {
+  margin-top: 0;
+}
+
+.politica-conteudo p {
+  font-size: var(--fs-base);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.politica-conteudo ul {
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.politica-conteudo li {
+  list-style: disc;
+  font-size: var(--fs-base);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-2);
+}
+
+.politica-data {
+  font-size: var(--fs-xs);
+  color: var(--cor-texto-soft);
+  margin-bottom: var(--space-7);
+}
