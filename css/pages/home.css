@@ -224,7 +224,7 @@
   gap: var(--space-3);
 }
 
-/* Segundo col: sem conteúdo agora — espaço para foto futura */
+/* Segundo col: foto de textura do algodão */
 .algodao-callout__visual {
   display: none;
   aspect-ratio: 4 / 5;
