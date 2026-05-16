@@ -1,0 +1,38 @@
+{
+  "colecoes": [
+    {
+      "slug": "basica",
+      "nome": "Básica",
+      "tipo": "permanente",
+      "manifesto": "A linha que define a LLAS: camisetas básicas em algodão 100%, sem pressa, sem temporada.",
+      "descricao": "Camisetas lisas em algodão 100% penteado. Sem estampa, sem temporada, sempre repostas no estoque. A peça que se espera de uma camiseta — feita como deveria ser.",
+      "imagem_hero": "/assets/img/colecoes/basica-hero.webp",
+      "destaque_home": true,
+      "ordem": 1
+    },
+    {
+      "slug": "copa-brasil",
+      "nome": "Copa Brasil 2026",
+      "tipo": "tematica",
+      "ano": 2026,
+      "manifesto": "Para o Brasil que joga, que torce, que se enrola na bandeira nas vitórias.",
+      "descricao": "Estampas e apliques inspirados nos símbolos do Brasil. Algodão 100% penteado, tinta à base de água. Para a Copa do Mundo de 2026.",
+      "imagem_hero": "/assets/img/colecoes/copa-brasil-hero.webp",
+      "data_inicio": "2026-05-15",
+      "data_fim": "2026-07-31",
+      "destaque_home": true,
+      "ordem": 2
+    },
+    {
+      "slug": "brazilidades",
+      "nome": "Brazilidades",
+      "tipo": "tematica",
+      "ano": 2026,
+      "manifesto": "Símbolos do Brasil que não cabem em uma bandeira. Estampas que celebram nossas frutas, plantas, cultura.",
+      "descricao": "Estampas botanicais de frutas e plantas brasileiras. Açaí, palmeiras e outros símbolos do cerrado e da floresta — em algodão 100% penteado.",
+      "imagem_hero": "/assets/img/colecoes/brazilidades-hero.webp",
+      "destaque_home": true,
+      "ordem": 3
+    }
+  ]
+}

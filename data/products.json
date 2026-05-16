@@ -1,0 +1,263 @@
+{
+  "produtos": [
+
+    {
+      "slug": "gola-alta",
+      "nome": "Camiseta Básica Gola Alta",
+      "colecao": "basica",
+      "genero": "feminino",
+      "modelagem": "gola-alta",
+      "estampa": null,
+      "descricao_curta": "Gola alta em algodão 100% penteado. Caimento reto, acabamento com viés do mesmo tecido.",
+      "descricao_longa": "Camiseta básica em algodão 100% penteado 30/1. Modelagem feminina de corte reto com leve afunilamento — caimento que veste bem sem marcar. Gola alta acabada com viés do mesmo tecido, sem elástico ou costura aparente no pescoço. Gramatura 180 g/m²: encorpada o suficiente para não marcar, leve o suficiente para o clima brasileiro. Sem elastano, sem poliéster, sem acabamentos químicos de easy-care.",
+      "composicao": "100% algodão penteado 30/1",
+      "gramatura": "180 g/m²",
+      "preco": 0.00,
+      "preco_promocional": null,
+      "destaque": true,
+      "tags": ["basica", "gola-alta", "lisa"],
+      "cor_padrao": "algodao",
+      "variantes_cor": [
+        {
+          "slug": "algodao",
+          "nome": "Algodão",
+          "hex": "#FAFAF7",
+          "imagens": ["algodao-1.webp", "algodao-2.webp"]
+        },
+        {
+          "slug": "carvao",
+          "nome": "Carvão",
+          "hex": "#0D0D0D",
+          "imagens": ["carvao-1.webp"]
+        },
+        {
+          "slug": "castanha",
+          "nome": "Castanha",
+          "hex": "#5C3A2E",
+          "imagens": ["castanha-1.webp", "castanha-2.webp"]
+        },
+        {
+          "slug": "tinta",
+          "nome": "Tinta",
+          "hex": "#1B2A4A",
+          "imagens": ["tinta-1.webp"]
+        },
+        {
+          "slug": "pitanga",
+          "nome": "Pitanga",
+          "hex": "#B83A2E",
+          "imagens": ["pitanga-1.webp", "pitanga-2.webp"]
+        },
+        {
+          "slug": "anil",
+          "nome": "Anil",
+          "hex": "#4A6B8A",
+          "imagens": ["anil-1.webp", "anil-2.webp"]
+        },
+        {
+          "slug": "jabuticaba",
+          "nome": "Jabuticaba",
+          "hex": "#5C2030",
+          "imagens": ["jabuticaba-1.webp", "jabuticaba-2.webp"]
+        },
+        {
+          "slug": "mel",
+          "nome": "Mel",
+          "hex": "#C9A04A",
+          "imagens": ["mel-1.webp"]
+        },
+        {
+          "slug": "buritirana",
+          "nome": "Buritirana",
+          "hex": "#C97A88",
+          "imagens": ["buritirana-1.webp", "buritirana-2.webp"]
+        }
+      ],
+      "tamanhos": ["P", "M", "G"],
+      "estoque": {}
+    },
+
+    {
+      "slug": "gola-alta",
+      "nome": "Camiseta Básica Gola Alta",
+      "colecao": "basica",
+      "genero": "masculino",
+      "modelagem": "gola-alta",
+      "estampa": null,
+      "descricao_curta": "Gola alta masculina em algodão 100% penteado. Ombro levemente dropped, caimento natural.",
+      "descricao_longa": "Camiseta básica masculina em algodão 100% penteado 30/1. Modelagem reta com ombro levemente dropped — caimento natural sem forçar a forma do corpo. Gola alta acabada com viés do mesmo tecido. Gramatura 190 g/m²: levemente mais encorpada que a linha feminina, sem perder a leveza. Sem elastano, sem poliéster, sem acabamentos químicos.",
+      "composicao": "100% algodão penteado 30/1",
+      "gramatura": "190 g/m²",
+      "preco": 0.00,
+      "preco_promocional": null,
+      "destaque": true,
+      "tags": ["basica", "gola-alta", "lisa"],
+      "cor_padrao": "algodao",
+      "variantes_cor": [
+        {
+          "slug": "algodao",
+          "nome": "Algodão",
+          "hex": "#FAFAF7",
+          "imagens": ["algodao-1.webp", "algodao-2.webp"]
+        },
+        {
+          "slug": "carvao",
+          "nome": "Carvão",
+          "hex": "#0D0D0D",
+          "imagens": ["carvao-1.webp", "carvao-2.webp"]
+        },
+        {
+          "slug": "tinta",
+          "nome": "Tinta",
+          "hex": "#1B2A4A",
+          "imagens": ["tinta-1.webp", "tinta-2.webp"]
+        },
+        {
+          "slug": "pitanga",
+          "nome": "Pitanga",
+          "hex": "#B83A2E",
+          "imagens": ["pitanga-1.webp", "pitanga-2.webp"]
+        }
+      ],
+      "tamanhos": ["P", "M", "G", "GG"],
+      "estoque": {}
+    },
+
+    {
+      "slug": "bandeira",
+      "nome": "Copa Brasil — Bandeira",
+      "colecao": "copa-brasil",
+      "genero": "feminino",
+      "modelagem": "regular",
+      "estampa": "bandeira-grande",
+      "descricao_curta": "Estampa da bandeira nacional em algodão 100% penteado. Tinta à base de água, corte regular.",
+      "descricao_longa": "Camiseta Copa Brasil com estampa da bandeira nacional aplicada em tela de seda. Base em algodão 100% penteado 30/1, 180 g/m². Corte regular feminino — nem justo, nem largo. Estampa com tinta à base de água, sem PVC ou acabamentos plastisol com ftalatos. A estampa foi desenvolvida para durar com as lavagens sem desbotamento acelerado.",
+      "composicao": "100% algodão penteado 30/1",
+      "gramatura": "180 g/m²",
+      "preco": 0.00,
+      "preco_promocional": null,
+      "destaque": true,
+      "tags": ["copa-brasil", "estampada", "bandeira", "regular"],
+      "cor_padrao": "algodao",
+      "variantes_cor": [
+        {
+          "slug": "algodao",
+          "nome": "Algodão",
+          "hex": "#FAFAF7",
+          "imagens": ["algodao-1.webp", "algodao-2.webp", "algodao-3.webp"]
+        }
+      ],
+      "tamanhos": ["P", "M", "G"],
+      "estoque": {}
+    },
+
+    {
+      "slug": "aplique-bandeira",
+      "nome": "Copa Brasil — Aplique Bandeira",
+      "colecao": "copa-brasil",
+      "genero": "feminino",
+      "modelagem": "regular",
+      "estampa": "aplique-bordado",
+      "descricao_curta": "Aplique bordado da bandeira em algodão 100% penteado. Detalhe artesanal, corte regular.",
+      "descricao_longa": "Camiseta Copa Brasil com aplique bordado da bandeira nacional — detalhe artesanal aplicado manualmente sobre a peça. Base em algodão 100% penteado 30/1, 180 g/m². Corte regular feminino. O bordado substitui a estampa convencional por uma textura tátil que valoriza o acabamento. Linhas de bordado em algodão, sem filamentos sintéticos.",
+      "composicao": "100% algodão penteado 30/1",
+      "gramatura": "180 g/m²",
+      "preco": 0.00,
+      "preco_promocional": null,
+      "destaque": true,
+      "tags": ["copa-brasil", "aplique", "bordado", "regular"],
+      "cor_padrao": "algodao",
+      "variantes_cor": [
+        {
+          "slug": "algodao",
+          "nome": "Algodão",
+          "hex": "#FAFAF7",
+          "imagens": ["algodao-1.webp"]
+        },
+        {
+          "slug": "tinta",
+          "nome": "Tinta",
+          "hex": "#1B2A4A",
+          "imagens": ["tinta-1.webp", "tinta-2.webp"]
+        },
+        {
+          "slug": "floresta",
+          "nome": "Floresta",
+          "hex": "#355E3B",
+          "imagens": ["floresta-1.webp", "floresta-2.webp", "floresta-3.webp"]
+        }
+      ],
+      "tamanhos": ["P", "M", "G"],
+      "estoque": {}
+    },
+
+    {
+      "slug": "cropped",
+      "nome": "Copa Brasil — Cropped",
+      "colecao": "copa-brasil",
+      "genero": "feminino",
+      "modelagem": "cropped",
+      "estampa": null,
+      "descricao_curta": "Cropped em algodão 100% penteado. Comprimento acima da cintura, barra reta.",
+      "descricao_longa": "Camiseta Copa Brasil em corte cropped — comprimento terminando alguns centímetros acima da linha natural da cintura. Base em algodão 100% penteado 30/1, 180 g/m². Barra reta sem acabamento dobrado. Combina com calça de cintura alta ou saia. Sem elastano, sem acabamentos de encolhimento controlado.",
+      "composicao": "100% algodão penteado 30/1",
+      "gramatura": "180 g/m²",
+      "preco": 0.00,
+      "preco_promocional": null,
+      "destaque": true,
+      "tags": ["copa-brasil", "cropped", "lisa"],
+      "cor_padrao": "algodao",
+      "variantes_cor": [
+        {
+          "slug": "algodao",
+          "nome": "Algodão",
+          "hex": "#FAFAF7",
+          "imagens": ["algodao-1.webp", "algodao-2.webp"]
+        },
+        {
+          "slug": "tinta",
+          "nome": "Tinta",
+          "hex": "#1B2A4A",
+          "imagens": ["tinta-1.webp", "tinta-2.webp"]
+        },
+        {
+          "slug": "pequi",
+          "nome": "Pequi",
+          "hex": "#E8B83E",
+          "imagens": ["pequi-1.webp", "pequi-2.webp", "pequi-3.webp"]
+        }
+      ],
+      "tamanhos": ["P", "M", "G"],
+      "estoque": {}
+    },
+
+    {
+      "slug": "acai",
+      "nome": "Brazilidades — Açaí",
+      "colecao": "brazilidades",
+      "genero": "feminino",
+      "modelagem": "regular",
+      "estampa": "acai-botanical",
+      "descricao_curta": "Estampa botanical de açaí em algodão 100% penteado. Tinta à base de água, corte regular.",
+      "descricao_longa": "Camiseta Brazilidades com estampa botanical de açaí — fruto símbolo do Norte do Brasil. Desenho em linhas finas, referência à ilustração científica de plantas. Aplicado com tinta à base de água sobre algodão 100% penteado 30/1, 180 g/m². Corte regular feminino.",
+      "composicao": "100% algodão penteado 30/1",
+      "gramatura": "180 g/m²",
+      "preco": 0.00,
+      "preco_promocional": null,
+      "destaque": true,
+      "tags": ["brazilidades", "estampada", "acai", "botanical", "regular"],
+      "cor_padrao": "algodao",
+      "variantes_cor": [
+        {
+          "slug": "algodao",
+          "nome": "Algodão",
+          "hex": "#FAFAF7",
+          "imagens": ["algodao-1.webp", "algodao-2.webp"]
+        }
+      ],
+      "tamanhos": ["P", "M", "G"],
+      "estoque": {}
+    }
+
+  ]
+}
