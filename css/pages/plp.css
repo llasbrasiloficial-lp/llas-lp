@@ -1,0 +1,247 @@
+/* plp.css — LLAS — Páginas de listagem de produtos (PLP) */
+
+/* ── Breadcrumb ─────────────────────────────────────────── */
+.breadcrumb {
+  padding: var(--space-4) var(--padding-lateral);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--cor-texto-soft);
+}
+
+.breadcrumb__item:not(:last-child)::after {
+  content: '/';
+  color: var(--cor-borda);
+}
+
+.breadcrumb__link {
+  color: var(--cor-texto-soft);
+  transition: color var(--transition-padrao);
+}
+
+.breadcrumb__link:hover {
+  color: var(--cor-acento);
+}
+
+.breadcrumb__atual {
+  color: var(--cor-texto);
+  font-weight: var(--fw-medium);
+}
+
+/* ── Hero da PLP ────────────────────────────────────────── */
+.plp-hero {
+  padding: var(--space-6) var(--padding-lateral) var(--space-7);
+  border-bottom: 1px solid var(--cor-borda);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  transition: border-color var(--transition-tema);
+}
+
+.plp-hero__eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-texto-soft);
+  margin-bottom: var(--space-3);
+}
+
+.plp-hero__titulo {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: var(--fw-black);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-4);
+  min-height: 1.2em; /* evita layout shift */
+}
+
+.plp-hero__manifesto {
+  font-size: var(--fs-md);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  max-width: 540px;
+  min-height: 1.5em;
+}
+
+/* ── Seletor de gênero (visível na PLP de coleção) ──────── */
+.plp-genero-tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.plp-genero-tab {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cor-texto-soft);
+  border-bottom: 2px solid transparent;
+  transition:
+    color var(--transition-padrao),
+    border-color var(--transition-padrao);
+}
+
+.plp-genero-tab:hover,
+.plp-genero-tab.is-ativo {
+  color: var(--cor-texto);
+  border-color: var(--cor-texto);
+}
+
+/* ── Barra de filtros ───────────────────────────────────── */
+.plp-filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--padding-lateral);
+  border-bottom: 1px solid var(--cor-borda);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+  transition: border-color var(--transition-tema);
+}
+
+.plp-filtros::-webkit-scrollbar {
+  display: none;
+}
+
+.plp-filtros__chips {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+/* Chip de filtro */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: var(--cor-texto-soft);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-padrao),
+    color var(--transition-padrao),
+    background-color var(--transition-padrao);
+}
+
+.chip:hover {
+  border-color: var(--cor-texto);
+  color: var(--cor-texto);
+}
+
+.chip.is-ativo {
+  background-color: var(--cor-texto);
+  border-color: var(--cor-texto);
+  color: var(--cor-bg);
+}
+
+.plp-filtros__contagem {
+  font-size: var(--fs-xs);
+  color: var(--cor-texto-soft);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Grid de produtos ───────────────────────────────────── */
+.plp-grid {
+  padding: var(--space-6) var(--padding-lateral) var(--space-9);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.plp-grid__produtos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .plp-grid__produtos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .plp-grid__produtos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Override: remove a largura fixa do carrossel nos cards do grid */
+.plp-grid .product-card {
+  width: 100%;
+}
+
+/* ── Empty state ────────────────────────────────────────── */
+.plp-vazio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-10) 0;
+  color: var(--cor-texto-soft);
+}
+
+.plp-vazio__titulo {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+  color: var(--cor-texto);
+  margin-bottom: var(--space-3);
+}
+
+/* ── Loading skeleton (enquanto JS carrega) ─────────────── */
+.plp-skeleton {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: inherit;
+  gap: inherit;
+}
+
+.plp-skeleton__card {
+  animation: pulsar 1.5s ease-in-out infinite;
+}
+
+.plp-skeleton__img {
+  aspect-ratio: 3 / 4;
+  background-color: var(--cor-borda);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+
+.plp-skeleton__linha {
+  height: 14px;
+  background-color: var(--cor-borda);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+}
+
+.plp-skeleton__linha--curta {
+  width: 60%;
+}
+
+@keyframes pulsar {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
