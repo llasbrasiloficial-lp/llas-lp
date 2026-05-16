@@ -224,6 +224,22 @@ function mostrarSkeleton(gridEl, n = 4) {
   `).join('');
 }
 
+/* ── Schema BreadcrumbList ──────────────────────────────── */
+function injetarBreadcrumbSchema(nomeGenero, colecaoData) {
+  const base  = 'https://llasoficial.com.br';
+  const items = [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Início',    'item': `${base}/` },
+    { '@type': 'ListItem', 'position': 2, 'name': nomeGenero,  'item': `${base}/${genero}` },
+  ];
+  if (colecaoData) {
+    items.push({ '@type': 'ListItem', 'position': 3, 'name': colecaoData.nome, 'item': `${base}/${genero}/${colecao}` });
+  }
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': items });
+  document.head.appendChild(s);
+}
+
 /* ── Init ───────────────────────────────────────────────── */
 async function init() {
   if (!genero) return;
@@ -288,6 +304,9 @@ async function init() {
 
     /* Grid */
     if (gridEl) renderGrid(gridEl, produtos, produtos);
+
+    /* Schema BreadcrumbList */
+    injetarBreadcrumbSchema(nomeGenero, colecaoData);
 
   } catch (err) {
     console.error('[LLAS] Erro ao carregar PLP:', err);

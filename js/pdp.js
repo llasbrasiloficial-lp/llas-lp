@@ -305,6 +305,63 @@ function renderBreadcrumb(colecaoData) {
     </ol>`;
 }
 
+/* ── Schema: injeção de JSON-LD ─────────────────────────── */
+function injetarSchema(data) {
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(data);
+  document.head.appendChild(s);
+}
+
+function injetarSchemas(colecaoData) {
+  const base        = 'https://llasoficial.com.br';
+  const nomeGenero  = genero === 'feminino' ? 'Feminino' : 'Masculino';
+  const urlProduto  = `${base}/${produto.genero}/${produto.colecao}/${produto.slug}`;
+  const todasImagens = produto.variantes_cor.flatMap(cor =>
+    cor.imagens.map(img =>
+      `${base}/assets/img/produtos/${produto.genero}/${produto.colecao}/${produto.slug}/${img}`
+    )
+  );
+
+  /* BreadcrumbList */
+  injetarSchema({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      { '@type': 'ListItem', 'position': 1, 'name': 'Início',       'item': `${base}/` },
+      { '@type': 'ListItem', 'position': 2, 'name': nomeGenero,     'item': `${base}/${genero}` },
+      { '@type': 'ListItem', 'position': 3, 'name': colecaoData?.nome ?? colecao, 'item': `${base}/${genero}/${colecao}` },
+      { '@type': 'ListItem', 'position': 4, 'name': produto.nome,   'item': urlProduto },
+    ],
+  });
+
+  /* Product */
+  const oferta = isPrecoDefined(produto)
+    ? {
+        '@type':         'Offer',
+        'priceCurrency': 'BRL',
+        'price':         produto.preco.toFixed(2),
+        'availability':  'https://schema.org/InStock',
+        'url':           urlProduto,
+      }
+    : {
+        '@type':        'Offer',
+        'availability': 'https://schema.org/PreOrder',
+        'url':          urlProduto,
+      };
+
+  injetarSchema({
+    '@context':   'https://schema.org',
+    '@type':      'Product',
+    'name':       produto.nome,
+    'description': produto.descricao_curta ?? '',
+    'image':      todasImagens,
+    'brand':      { '@type': 'Brand', 'name': 'LLAS' },
+    'material':   produto.composicao ?? '100% algodão penteado 30/1',
+    'offers':     oferta,
+  });
+}
+
 /* ── Init ───────────────────────────────────────────────── */
 async function init() {
   if (!genero || !colecao || !slug) return;
@@ -379,6 +436,9 @@ async function init() {
 
     /* Cross-sell */
     initCrossSell();
+
+    /* Schema JSON-LD */
+    injetarSchemas(colecaoData);
 
   } catch (err) {
     console.error('[LLAS] Erro ao carregar PDP:', err);

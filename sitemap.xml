@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ── Home ───────────────────────────────────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+  <!-- ── PLPs por gênero ───────────────────────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/feminino</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/masculino</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+  <!-- ── PLPs por coleção — feminino ───────────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/feminino/basica</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/feminino/copa-brasil</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/feminino/brazilidades</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+  <!-- ── PLPs por coleção — masculino ──────────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/masculino/basica</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/masculino/copa-brasil</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/masculino/brazilidades</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+  <!-- ── PDPs — Básica feminina ────────────────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/feminino/basica/gola-alta</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+  <!-- ── PDPs — Básica masculina ───────────────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/masculino/basica/gola-alta</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+  <!-- ── PDPs — Copa Brasil feminina ───────────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/feminino/copa-brasil/bandeira</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/feminino/copa-brasil/aplique-bandeira</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/feminino/copa-brasil/cropped</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+  <!-- ── PDPs — Brazilidades feminina ──────────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/feminino/brazilidades/acai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+  <!-- ── Educativa / alta prioridade SEO ───────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/algodao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+  <!-- ── Institucionais ────────────────────────────────── -->
+  <url>
+    <loc>https://llasoficial.com.br/sobre</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/trocas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/politica-privacidade</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://llasoficial.com.br/termos</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-05-16</lastmod>
+  </url>
+
+</urlset>

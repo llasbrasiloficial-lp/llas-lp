@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /carrinho
+
+Sitemap: https://llasoficial.com.br/sitemap.xml

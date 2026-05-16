@@ -14,6 +14,51 @@
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://llasoficial.com.br/">
 
+  <!-- Preload: primeira imagem do hero (LCP) -->
+  <link rel="preload" as="image" href="/assets/img/produtos/feminino/basica/gola-alta/algodao-1.webp" fetchpriority="high">
+
+  <!-- Schema: Organization + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://llasoficial.com.br/#organization",
+        "name": "LLAS",
+        "legalName": "LLAS INDÚSTRIA E COMÉRCIO DE ROUPAS LTDA",
+        "url": "https://llasoficial.com.br",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://llasoficial.com.br/assets/img/og/default.jpg"
+        },
+        "description": "Camisetas básicas em algodão 100% penteado. Sem misturas sintéticas, sem acabamentos químicos. Fabricadas em Goiânia, GO.",
+        "email": "llasbrasil.oficial@gmail.com",
+        "foundingDate": "2026",
+        "founders": [
+          { "@type": "Person", "name": "Luiz Alberto de Souza" },
+          { "@type": "Person", "name": "Ludmilla Saldanha" }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Goiânia",
+          "addressRegion": "GO",
+          "addressCountry": "BR"
+        },
+        "taxID": "66.740.417/0001-07"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://llasoficial.com.br/#website",
+        "url": "https://llasoficial.com.br",
+        "name": "LLAS — O básico refinado",
+        "publisher": { "@id": "https://llasoficial.com.br/#organization" },
+        "inLanguage": "pt-BR"
+      }
+    ]
+  }
+  </script>
+
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
