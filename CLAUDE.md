@@ -21,15 +21,58 @@ LLAS = **L**uiz **A**lberto + **L**udmilla **S**aldanha — iniciais dos sócios
 
 ### Posicionamento estratégico
 
-**A LLAS é a contranarrativa explícita à fast fashion tecnológica brasileira.** Enquanto outras marcas competem com tecidos sintéticos cada vez mais processados (modal, viscose, liocel, poliamida, elastano) e acabamentos químicos que prometem "anti-odor", "anti-suor", "anti-rugas" e "hidrorepelência", a LLAS escolhe o caminho oposto: **algodão natural sem acabamentos químicos**.
+**A LLAS vende qualidade material em algodão natural, com responsabilidade biológica radical.** Camisetas que duram, com caimento, gramatura, fio e costura impecáveis — e que, ao mesmo tempo, não comprometem a saúde de quem as veste.
 
-A premissa central:
-> Tecidos sintéticos e tratamentos químicos resolvem problemas que o algodão de qualidade nunca teve. A melhor tecnologia têxtil é a fibra que a natureza já desenvolveu ao longo de milênios.
+O diferencial é a soma de duas coisas inseparáveis:
 
-Esse posicionamento é a versão **fashion do movimento natural vs ultraprocessado** que já transformou alimentação (orgânico), cosméticos (clean beauty) e cuidados pessoais. No vestuário básico premium brasileiro, esse espaço ainda está vazio. **A LLAS quer ocupar essa posição como pioneira.**
+1. **Qualidade material objetiva** — algodão penteado de fio fino, gramatura adequada, costuras reforçadas, modelagem precisa. A peça vende-se pelo que **é**, não pelo que evita.
+
+2. **Responsabilidade biológica** — escolha consciente por fibras naturais (algodão, linho, futuramente seda) sem acabamentos químicos. Isso protege o corpo de quem usa, em contraste com a indústria têxtil convencional que aplica formaldeído, ftalatos, PFAS, metais pesados e tratamentos antimicrobianos.
+
+A premissa central é uma reformulação do "natural vs ultraprocessado" para o vestuário:
+
+> A roupa é uma segunda pele. O que você veste entra em contato com 1,7m² da maior superfície do corpo humano por 12-16 horas por dia. Faz sentido escolher essa pele com tanto cuidado quanto se escolhe um alimento.
+
+**Importante para o tom:** a LLAS **não é uma marca ativista nem anti-indústria**. É uma marca de qualidade que **escolheu** o caminho do algodão natural pelos motivos certos — e comunica isso com clareza e elegância. Não grita contra fast fashion; explica o que faz e por quê.
+
+O cliente compra uma camiseta LLAS porque é **uma camiseta excelente** (qualidade) — e descobre, ao longo da experiência, que ela é também uma escolha mais inteligente para o corpo dele (responsabilidade biológica). Não o contrário.
+
+### Camadas de comunicação (pirâmide)
+
+```
+              [Camada 3: Ativismo]
+              Existe na conversa cultural,
+              mas a LLAS NÃO fala desse lugar.
+
+         [Camada 2: Responsabilidade biológica]
+         Comunicada com elegância e ciência em
+         terceira pessoa. Esta é a diferenciação.
+
+    [Camada 1: Qualidade material]
+    Foco principal de venda. Fio, gramatura,
+    caimento, durabilidade. Como qualquer marca premium.
+```
+
+A LLAS opera 100% na **Camada 1** + **Camada 2**. Nunca na Camada 3.
+
+### Casos e referências de terceira pessoa documentados
+
+Estes são casos públicos e verificáveis que podem ser citados como atribuição de terceira pessoa em conteúdo educativo:
+
+- **Texas vs. Shein (dez/2025 + fev/2026)** — O Attorney General do Texas, Ken Paxton, abriu investigação e processo contra a Shein por venda de produtos contendo substâncias inseguras, incluindo roupas para recém-nascidos. Fonte: Office of the Attorney General of Texas.
+
+- **Bremen Environmental Institute (relatório Greenpeace)** — Análise laboratorial independente alemã encontrou em peças Shein: PFAS até 3.300 vezes acima do limite legal europeu; ftalatos até 100 vezes acima; metais pesados (chumbo, cádmio); formaldeído; APEOs; compostos orgânicos voláteis.
+
+- **Coreia do Sul (2024)** — Autoridades sul-coreanas detectaram ftalatos em sapatos Shein em concentrações até 229 vezes superiores ao limite legal local.
+
+- **University of Plymouth (2016)** — Estudo seminal sobre microplásticos liberados por fibras sintéticas a cada lavagem.
+
+- **Ellen MacArthur Foundation** — Relatórios sobre o ciclo de microfibras têxteis e impacto oceânico.
+
+- **IARC, ECHA, REACH, EPA** — Órgãos reguladores que classificam ou restringem substâncias específicas (formaldeído como carcinógeno Grupo 1 pela IARC; corantes azo restritos pela REACH; PFAS sob regulação crescente).
 
 ### Diferencial técnico
-- **Composição:** algodão 100% como linha principal. Outras fibras naturais (linho) podem entrar pontualmente. **Nunca** poliéster, elastano sintético, modal, viscose, liocel ou poliamida como linha principal.
+- **Composição:** algodão 100% como linha principal. Outras fibras naturais (linho, seda) podem entrar pontualmente. **Nunca** poliéster, elastano sintético, modal, viscose, liocel ou poliamida como linha principal.
 - **Sem acabamentos químicos:** sem formaldeído (anti-rugas), sem tratamentos antimicrobianos (prata coloidal, triclosan), sem PFAS (hidrorepelência), sem amaciantes sintéticos pesados.
 - **Transparência radical:** composição, gramatura, tipo de fio, origem do algodão e processo de tingimento serão informados em toda peça.
 
@@ -82,6 +125,7 @@ Inspirado em marcas que dão personalidade às cores (Insider faz isso bem: "Car
 | Cerrado | Bege/areia quente | `#C9B79C` |
 | Pedra | Cinza médio | `#8A8A85` |
 | Buritirana | Rosa terroso | `#C97A88` |
+| Floresta | Verde escuro neutro | `#355E3B` |
 
 Coleções temáticas podem trazer cores próprias com nomes específicos do tema. Os nomes acima são placeholders editáveis pelo Alexandre/Ludmilla.
 
@@ -119,6 +163,44 @@ O Brasil não tem regulação tão restritiva quanto a europeia (REACH) ou o sis
 ❌ "Nossas camisetas não dão mau cheiro."
 ✅ "Algumas marcas usam tratamentos antimicrobianos como nanoprata para mascarar odor em fibras sintéticas. Optamos por algodão respirável, que dispersa naturalmente a umidade do corpo — princípio físico, não tratamento químico."
 
+❌ "A LLAS é a alternativa contra a fast fashion."
+✅ "Escolhemos o algodão pelo que ele é: fibra natural, respirável, durável. As outras escolhas vieram como consequência."
+
+❌ "Compre LLAS, evite roupas tóxicas."
+✅ "Camisetas básicas em algodão 100% penteado. Sem misturas, sem acabamentos químicos."
+
+### Exemplos de copy LONGO no tom certo (referência)
+
+**Para a página /algodao (educativa):**
+
+> ## A roupa é uma segunda pele
+>
+> Em média, passamos entre 12 e 16 horas por dia em contato direto com tecido. A pele humana adulta tem cerca de 1,7m² de superfície — a maior do corpo, e também a mais permeável a substâncias que migram do que toca.
+>
+> Por isso a escolha do tecido importa.
+>
+> A maior parte das camisetas vendidas no Brasil é de poliéster ou de misturas com algodão (PV). Para deixar essas peças "anti-rugas", "anti-odor" ou "hidrorepelentes", a indústria aplica acabamentos químicos: formaldeído (classificado como carcinógeno humano pela IARC), nanopartículas de prata, compostos perfluoroalquilados (PFAS) e ftalatos. Esses compostos migram para a pele com o suor e o calor do corpo.
+>
+> Em 2025 e 2026, o Attorney General do Texas, Ken Paxton, abriu duas ações contra a Shein por venda de produtos contendo substâncias inseguras, incluindo roupas para recém-nascidos. Análises do Bremen Environmental Institute (Greenpeace) encontraram, em peças da mesma marca, PFAS até 3.300 vezes acima do limite legal europeu, ftalatos até 100 vezes acima, e metais pesados como chumbo e cádmio.
+>
+> O algodão de qualidade dispensa todos esses tratamentos. Ele já é respirável, já é confortável, já dura.
+>
+> É essa a escolha da LLAS.
+
+**Para uma seção "Por que algodão" na home (curta):**
+
+> Algodão respira. Algodão dura. Algodão não precisa de acabamentos químicos para fazer o que se espera dele — vestir bem.
+>
+> Trabalhamos com algodão penteado 30/1, gramatura 180 g/m², sem misturas sintéticas e sem tratamentos químicos de easy-care.
+>
+> [Saiba mais sobre essa escolha →]
+
+**Para uma PDP (descrição de produto):**
+
+> Camiseta básica em algodão 100% penteado. Modelagem reta, gola alta acabada com viés do mesmo tecido. Gramatura 180 g/m² — encorpada o suficiente para não marcar, leve o suficiente para o clima brasileiro.
+>
+> Sem elastano, sem poliéster, sem acabamentos químicos. A peça que se espera de uma camiseta — feita como deveria ser.
+
 ### Disclaimer obrigatório em qualquer página com conteúdo técnico
 > "Nossas peças são vestuário, não produtos de saúde. As informações sobre fibras e processos têxteis citadas neste site têm caráter educativo e remetem a normativas e estudos públicos (REACH/ECHA, Inmetro, IARC, EPA). Para condições dermatológicas específicas, consulte um profissional de saúde."
 
@@ -126,7 +208,9 @@ O Brasil não tem regulação tão restritiva quanto a europeia (REACH) ou o sis
 
 ## 4. Tom de voz
 
-**Princípio:** "O básico refinado" implica confiança quieta. A marca não grita. Não usa exclamações. Não usa marketing de urgência. Não promete transformação. Vende qualidade material e clareza de propósito.
+**Princípio:** "O básico refinado" implica confiança quieta. A marca não grita. Não usa exclamações. Não usa marketing de urgência. Não promete transformação. **Vende qualidade material e clareza de propósito.**
+
+A LLAS comunica como uma marca que **já tem certeza** do que faz e por quê. Não tenta convencer ninguém de nada; explica suas escolhas e deixa a peça falar por si.
 
 **Características:**
 - Português brasileiro elegante, frases curtas
@@ -135,6 +219,21 @@ O Brasil não tem regulação tão restritiva quanto a europeia (REACH) ou o sis
 - Evita superlativos vazios ("incrível", "perfeito", "revolucionário")
 - Especificidade no lugar de adjetivos: "fio penteado 30/1" > "ótima qualidade"
 - Primeira pessoa do plural ("nós") para institucional; segunda pessoa singular ("você") para CTA
+- **Nunca usa linguagem ativista ou anti-indústria.** A LLAS escolheu o algodão pelos motivos certos — não está em guerra com ninguém.
+
+**Frases-tagline aceitáveis (referência de tom):**
+- "O básico refinado." (oficial)
+- "Algodão. Caimento. Verdade."
+- "A roupa é uma segunda pele." (educativo, página /algodao)
+- "Sem misturas. Sem atalhos."
+- "Fibra natural. Escolha consciente."
+
+**Frases que NÃO usar:**
+- "Diga não à fast fashion" (ativista)
+- "Roupas tóxicas matam" (alarmista)
+- "Você merece roupas melhores" (vendedor)
+- "A marca que se importa com você" (genérico)
+- "Revolução na moda básica" (superlativo vazio)
 
 **Referências de tom:**
 - Everlane (transparência radical)
@@ -599,6 +698,91 @@ Cada item no carrinho é uma combinação única `genero + colecao + slug + cor 
 
 Imagem mostrada no card do carrinho = `variantes_cor[cor].imagens[0]` (primeira foto da cor selecionada), construído com o caminho completo `genero/colecao/slug`.
 
+### Tratamento de preço placeholder ("Em breve")
+
+Enquanto os preços finais não estiverem definidos pelos sócios, todos os produtos do `products.json` terão `"preco": 0.00`.
+
+**Comportamento na UI quando `preco === 0`:**
+- **Card na PLP:** mostra `Em breve` no lugar do preço, em cor `--cor-texto-soft` e peso 500
+- **PDP:** mostra `Em breve` no lugar do preço, com bloco menor abaixo: "Faça parte da lista — avisaremos quando estiver disponível" + botão "Avisar quando lançar" (que abre o modal de WhatsApp ou newsletter)
+- **Side cart e carrinho:** botão "Adicionar ao carrinho" fica desabilitado para produtos com `preco === 0`, com tooltip "Em breve disponível"
+
+Quando os preços finais entrarem no JSON (substituindo 0.00 pelo valor real), a UI automaticamente reverte para o comportamento de e-commerce normal, sem necessidade de mudanças no código.
+
+### Decisão de arquitetura: roteamento client-side com rewrites
+
+A arquitetura adotada é a **Opção B — template único por tipo de página + rewrites no `vercel.json`**.
+
+**Por quê:**
+- Não escala bem ter um `.html` físico por produto (6 produtos hoje, dezenas no futuro)
+- Manutenção centralizada (um único template de PDP, um único de PLP)
+- URLs limpas continuam funcionando (`/feminino/basica/gola-alta`)
+- Vercel suporta nativamente via `vercel.json`
+
+**Como funciona:**
+
+Arquivo `vercel.json` na raiz:
+```json
+{
+  "rewrites": [
+    { "source": "/feminino/:colecao/:slug", "destination": "/produto.html?genero=feminino&colecao=:colecao&slug=:slug" },
+    { "source": "/masculino/:colecao/:slug", "destination": "/produto.html?genero=masculino&colecao=:colecao&slug=:slug" },
+    { "source": "/feminino/:colecao", "destination": "/colecao.html?genero=feminino&colecao=:colecao" },
+    { "source": "/masculino/:colecao", "destination": "/colecao.html?genero=masculino&colecao=:colecao" },
+    { "source": "/feminino", "destination": "/genero.html?genero=feminino" },
+    { "source": "/masculino", "destination": "/genero.html?genero=masculino" },
+    { "source": "/colecoes/:slug", "destination": "/colecao-manifesto.html?slug=:slug" }
+  ]
+}
+```
+
+**Templates únicos a serem criados (em vez de muitos `.html` por produto):**
+- `produto.html` — template universal de PDP
+- `colecao.html` — template universal de PLP de coleção
+- `genero.html` — template universal de PLP de gênero (mostra tudo do gênero)
+- `colecao-manifesto.html` — página editorial de uma coleção (com texto, sem produtos)
+
+**Cada template:**
+1. Lê `?genero=X&colecao=Y&slug=Z` da URL
+2. Busca os dados correspondentes em `data/products.json` ou `data/colecoes.json`
+3. Popula o HTML dinamicamente via JS
+4. Atualiza `<title>`, meta tags, schema markup com base nos dados
+
+**Estrutura de pastas atualizada (sobrescreve a seção 10):**
+
+A árvore de pastas com arquivos físicos por produto (`/feminino/basica/[slug].html`) **fica descontinuada**. A árvore real fica:
+
+```
+llas-lp/
+├── CLAUDE.md
+├── README.md
+├── .gitignore
+├── vercel.json                     (rewrites para SPA-like routing)
+├── index.html                      (home)
+├── produto.html                    (template universal PDP)
+├── colecao.html                    (template universal PLP de coleção)
+├── genero.html                     (template universal PLP de gênero)
+├── colecao-manifesto.html          (página editorial de coleção)
+├── sobre.html
+├── algodao.html
+├── faq.html
+├── politica-privacidade.html
+├── termos.html
+├── trocas.html
+├── carrinho.html
+├── /css
+│   └── ...
+├── /js
+│   └── ...
+├── /data
+│   ├── colecoes.json
+│   └── products.json
+├── /assets/img/produtos/[genero]/[colecao]/[slug]/...
+└── /brand_assets/
+```
+
+Não existem mais pastas físicas `/feminino/`, `/masculino/` na raiz. O Vercel resolve via rewrite.
+
 ---
 
 ## 9. Arquitetura do site (páginas)
@@ -904,6 +1088,10 @@ llas-lp/
 - 15/05/2026: URLs por gênero (`/feminino/`, `/masculino/`).
 - 15/05/2026: Preços em placeholder R$ 0,00 até definição final.
 - 15/05/2026: **Linha masculina entra no lançamento junto com feminina** (não em fase 2). Estrutura "produtos separados por gênero" adotada como padrão da indústria.
+- 15/05/2026: **Correção crítica de posicionamento.** A LLAS vende **qualidade material primeiro**, com responsabilidade biológica como camada de diferenciação. NÃO é uma marca ativista ou anti-fast-fashion. Conceito "segunda pele" e linguagem "estratégia de saúde" adotados como base do discurso. Casos Texas vs Shein (2025/2026) e Bremen Environmental Institute adicionados como referências de terceira pessoa.
+- 15/05/2026: Cor "Floresta" (`#355E3B`) adicionada à paleta — verde escuro neutro, exclusivo da Copa Brasil. Arquivos `mata-*.webp` precisam ser renomeados para `floresta-*.webp` na pasta `assets/img/produtos/feminino/copa-brasil/aplique-bandeira/`.
+- 15/05/2026: Preço placeholder (R$ 0,00) será exibido como **"Em breve"** com botão de notificação. Comportamento automático muda quando preço real entrar no JSON.
+- 15/05/2026: **Roteamento decidido: Opção B (template único + rewrites no `vercel.json`).** Templates `produto.html`, `colecao.html`, `genero.html` ao invés de arquivos físicos por produto.
 
 **Próximos marcos:**
 1. ✅ Repositório no GitHub
@@ -928,4 +1116,4 @@ llas-lp/
 
 ---
 
-*Última atualização: 15/05/2026 — v4 com linha masculina ativa no lançamento, caminhos de imagens por gênero/coleção/slug.*
+*Última atualização: 15/05/2026 — v6 com cor Floresta definida, preços "Em breve", roteamento via vercel.json rewrites (Opção B).*
