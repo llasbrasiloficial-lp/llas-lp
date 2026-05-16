@@ -13,6 +13,7 @@ import {
   getUrlProduto,
 } from './produto-service.js';
 import { initCarrossel } from './carousel.js';
+import { addItem, atualizarBadge } from './cart.js';
 
 /* ── URL params ─────────────────────────────────────────── */
 const params  = new URLSearchParams(window.location.search);
@@ -167,31 +168,20 @@ function atualizarBotaoCart() {
 function addToCart() {
   if (!tamanhoAtual || !corAtual || !isPrecoDefined(produto)) return;
 
-  const carrinho = JSON.parse(localStorage.getItem('llas-cart') || '[]');
-  const existente = carrinho.find(i =>
-    i.genero   === produto.genero   &&
-    i.colecao  === produto.colecao  &&
-    i.slug     === produto.slug     &&
-    i.cor      === corAtual         &&
-    i.tamanho  === tamanhoAtual
-  );
+  addItem({
+    genero:   produto.genero,
+    colecao:  produto.colecao,
+    slug:     produto.slug,
+    cor:      corAtual,
+    nomeCor:  getVarianteCor(produto, corAtual)?.nome ?? corAtual,
+    tamanho:  tamanhoAtual,
+    preco:    produto.preco,
+    nome:     produto.nome,
+  });
 
-  if (existente) {
-    existente.quantidade += 1;
-  } else {
-    carrinho.push({
-      genero:    produto.genero,
-      colecao:   produto.colecao,
-      slug:      produto.slug,
-      cor:       corAtual,
-      tamanho:   tamanhoAtual,
-      quantidade: 1,
-    });
-  }
+  atualizarBadge();
 
-  localStorage.setItem('llas-cart', JSON.stringify(carrinho));
-
-  /* Feedback */
+  /* Feedback visual */
   const textoOriginal = addCartEl.textContent;
   addCartEl.textContent = 'Adicionado';
   addCartEl.classList.add('is-adicionado');
@@ -199,14 +189,6 @@ function addToCart() {
     addCartEl.textContent = textoOriginal;
     addCartEl.classList.remove('is-adicionado');
   }, 2000);
-
-  /* Badge do carrinho */
-  const total = carrinho.reduce((acc, i) => acc + i.quantidade, 0);
-  const badge = document.getElementById('cart-badge');
-  if (badge) {
-    badge.textContent = total > 0 ? String(total) : '';
-    badge.setAttribute('data-count', total);
-  }
 }
 
 addCartEl?.addEventListener('click', addToCart);
