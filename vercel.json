@@ -1,6 +1,13 @@
 {
-  "cleanUrls": true,
   "rewrites": [
+    { "source": "/sobre",                  "destination": "/sobre.html" },
+    { "source": "/algodao",                "destination": "/algodao.html" },
+    { "source": "/faq",                    "destination": "/faq.html" },
+    { "source": "/trocas",                 "destination": "/trocas.html" },
+    { "source": "/politica-privacidade",   "destination": "/politica-privacidade.html" },
+    { "source": "/termos",                 "destination": "/termos.html" },
+    { "source": "/carrinho",               "destination": "/carrinho.html" },
+
     { "source": "/feminino/:colecao/:slug",  "destination": "/produto.html" },
     { "source": "/masculino/:colecao/:slug", "destination": "/produto.html" },
     { "source": "/feminino/:colecao",        "destination": "/colecao.html" },
