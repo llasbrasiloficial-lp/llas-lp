@@ -7,7 +7,6 @@
   <title>LLAS — O básico refinado | Camisetas 100% algodão</title>
   <meta name="description" content="Camisetas básicas em algodão 100% penteado. Sem misturas sintéticas, sem acabamentos químicos. Fabricadas em Goiânia, GO.">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="LLAS — O básico refinado">
   <meta property="og:description" content="Camisetas básicas em algodão 100% penteado. Sem misturas, sem atalhos.">
   <meta property="og:image" content="https://llasoficial.com.br/assets/img/og/default.jpg">
@@ -23,131 +22,14 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/variables.css">
-
-  <style>
-    /* Estilos inline temporários do bootstrap — migrar para style.css na Etapa 2 */
-
-    html {
-      transition:
-        background-color var(--transition-tema),
-        color var(--transition-tema);
-    }
-
-    body {
-      font-family: var(--ff-principal);
-      font-size: var(--fs-base);
-      font-weight: var(--fw-regular);
-      color: var(--cor-texto);
-      background-color: var(--cor-bg);
-      line-height: var(--lh-base);
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-7);
-      padding: var(--padding-lateral);
-    }
-
-    /* Logo */
-    .logo {
-      width: 180px;
-      color: var(--cor-texto);
-      transition: color var(--transition-tema);
-    }
-
-    @media (min-width: 768px) {
-      .logo { width: 240px; }
-    }
-
-    /* Toggle de tema */
-    .theme-toggle {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-3) var(--space-5);
-      border: 1px solid var(--cor-borda);
-      border-radius: var(--radius-md);
-      color: var(--cor-texto-soft);
-      font-size: var(--fs-sm);
-      font-weight: var(--fw-medium);
-      letter-spacing: 0.04em;
-      transition:
-        border-color var(--transition-padrao),
-        color var(--transition-padrao),
-        background-color var(--transition-padrao);
-    }
-
-    .theme-toggle:hover,
-    .theme-toggle:focus-visible {
-      color: var(--cor-texto);
-      border-color: var(--cor-acento);
-      outline: none;
-    }
-
-    .theme-toggle:focus-visible {
-      outline: 2px solid var(--cor-acento);
-      outline-offset: 3px;
-    }
-
-    .theme-toggle__icon {
-      font-size: var(--fs-base);
-      line-height: 1;
-    }
-
-    /* Painel de tokens — visível apenas nesta etapa de bootstrap */
-    .token-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: var(--space-3);
-      width: 100%;
-      max-width: 640px;
-    }
-
-    .token-swatch {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-    }
-
-    .token-swatch__cor {
-      height: 40px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--cor-borda);
-      transition: border-color var(--transition-tema);
-    }
-
-    .token-swatch__nome {
-      font-size: var(--fs-xs);
-      color: var(--cor-texto-soft);
-      font-family: 'Courier New', monospace;
-    }
-
-    /* Divisor */
-    .divisor {
-      width: 40px;
-      height: 1px;
-      background-color: var(--cor-borda);
-      transition: background-color var(--transition-tema);
-    }
-
-    /* Texto de status */
-    .status {
-      font-size: var(--fs-sm);
-      color: var(--cor-texto-soft);
-      text-align: center;
-      letter-spacing: 0.02em;
-    }
-
-    .status strong {
-      color: var(--cor-texto);
-      font-weight: var(--fw-medium);
-    }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/components/header.css">
+  <link rel="stylesheet" href="/css/components/mega-menu.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
 
   <!-- Tema: aplicado antes da renderização para evitar flash -->
   <script>
-    (function() {
+    (function () {
       var salvo = localStorage.getItem('llas-theme');
       var prefere = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', salvo || prefere);
@@ -157,82 +39,481 @@
 
 <body>
 
-  <!-- Logo LLAS -->
-  <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="LLAS — O básico refinado.">
-    <title>LLAS</title>
-    <desc>O básico refinado.</desc>
-    <text x="200" y="120"
-          font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
-          font-weight="900"
-          font-size="130"
-          letter-spacing="-2"
-          text-anchor="middle"
-          fill="currentColor">LLAS</text>
-    <text x="200" y="160"
-          font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
-          font-weight="400"
-          font-size="18"
-          letter-spacing="3"
-          text-anchor="middle"
-          fill="currentColor">O BÁSICO REFINADO.</text>
-  </svg>
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
 
-  <div class="divisor" aria-hidden="true"></div>
+      <!-- Hamburger (mobile) -->
+      <button
+        class="site-header__hamburger"
+        id="nav-toggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+        type="button"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <line x1="2" y1="5"  x2="18" y2="5"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="2" y1="15" x2="18" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
 
-  <!-- Toggle de tema -->
-  <button
-    class="theme-toggle"
-    data-theme-toggle
-    aria-label="Ativar modo escuro"
-    aria-pressed="false"
-    type="button"
+      <!-- Logo -->
+      <a href="/" class="site-header__logo" aria-label="LLAS — Início">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="LLAS">
+          <title>LLAS</title>
+          <text x="200" y="120"
+                font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+                font-weight="900"
+                font-size="130"
+                letter-spacing="-2"
+                text-anchor="middle"
+                fill="currentColor">LLAS</text>
+          <text x="200" y="160"
+                font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+                font-weight="400"
+                font-size="18"
+                letter-spacing="3"
+                text-anchor="middle"
+                fill="currentColor">O BÁSICO REFINADO.</text>
+        </svg>
+      </a>
+
+      <!-- Nav (desktop) -->
+      <nav class="site-header__nav" aria-label="Navegação principal">
+        <button class="nav-item" data-menu="feminino" aria-expanded="false" aria-haspopup="true" type="button">
+          Feminino
+          <svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="nav-item" data-menu="masculino" aria-expanded="false" aria-haspopup="true" type="button">
+          Masculino
+          <svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="nav-item" data-menu="colecoes" aria-expanded="false" aria-haspopup="true" type="button">
+          Coleções
+          <svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <a href="/sobre" class="nav-item">Sobre</a>
+      </nav>
+
+      <!-- Actions: busca + tema + carrinho -->
+      <div class="site-header__actions">
+        <button class="header-action header-action--search" aria-label="Buscar" type="button">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="8.5" cy="8.5" r="5" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="12.5" y1="12.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <button
+          class="header-action"
+          data-theme-toggle
+          aria-label="Ativar modo escuro"
+          aria-pressed="false"
+          type="button"
+        >
+          <!-- Lua: aparece no modo claro (para ir para escuro) -->
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 3a7 7 0 1 0 7 7A5 5 0 0 1 10 3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <!-- Sol: aparece no modo escuro (para ir para claro) -->
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="10" y1="2"    x2="10" y2="4.5"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="10" y1="15.5" x2="10" y2="18"   stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2"   y1="10"  x2="4.5" y2="10"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="15.5" y1="10" x2="18"  y2="10"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="4.1"  y1="4.1"  x2="5.9"  y2="5.9"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14.1" y1="14.1" x2="15.9" y2="15.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="4.1"  y1="15.9" x2="5.9"  y2="14.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14.1" y1="5.9"  x2="15.9" y2="4.1"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <button class="header-action" aria-label="Carrinho (0 itens)" type="button">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M6.5 7.5V6a3.5 3.5 0 0 1 7 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="2.5" y="7.5" width="15" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span class="cart-badge" id="cart-badge" data-count="0" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div><!-- /.site-header__inner -->
+
+    <!-- Mega-menu: Feminino -->
+    <div class="mega-menu" id="mega-menu-feminino" role="region" aria-label="Menu Feminino">
+      <div class="mega-menu__inner">
+        <div class="mega-menu__col">
+          <h2 class="mega-menu__heading">Coleções</h2>
+          <ul class="mega-menu__list">
+            <li><a href="/feminino/basica" class="mega-menu__link">Básica</a></li>
+            <li>
+              <a href="/feminino/copa-brasil" class="mega-menu__link">
+                Copa Brasil 2026
+                <span class="mega-menu__badge">Sazonal</span>
+              </a>
+            </li>
+            <li><a href="/feminino/brazilidades" class="mega-menu__link">Brazilidades</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu__col">
+          <h2 class="mega-menu__heading">Modelagens</h2>
+          <ul class="mega-menu__list">
+            <li><a href="/feminino/basica/gola-alta" class="mega-menu__link">Gola alta</a></li>
+            <li><a href="/feminino/basica" class="mega-menu__link">Gola comum</a></li>
+            <li><a href="/feminino/copa-brasil" class="mega-menu__link">Cropped</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu__col">
+          <h2 class="mega-menu__heading">Destaques</h2>
+          <ul class="mega-menu__list">
+            <li><a href="/feminino" class="mega-menu__link">Lançamentos</a></li>
+            <li><a href="/feminino" class="mega-menu__link">Mais vendidos</a></li>
+            <li><a href="/feminino" class="mega-menu__link">Últimas peças</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mega-menu: Masculino -->
+    <div class="mega-menu" id="mega-menu-masculino" role="region" aria-label="Menu Masculino">
+      <div class="mega-menu__inner">
+        <div class="mega-menu__col">
+          <h2 class="mega-menu__heading">Coleções</h2>
+          <ul class="mega-menu__list">
+            <li><a href="/masculino/basica" class="mega-menu__link">Básica</a></li>
+            <li>
+              <a href="/masculino/copa-brasil" class="mega-menu__link">
+                Copa Brasil 2026
+                <span class="mega-menu__badge">Sazonal</span>
+              </a>
+            </li>
+            <li><a href="/masculino/brazilidades" class="mega-menu__link">Brazilidades</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu__col">
+          <h2 class="mega-menu__heading">Modelagens</h2>
+          <ul class="mega-menu__list">
+            <li><a href="/masculino/basica/gola-alta" class="mega-menu__link">Gola alta</a></li>
+            <li><a href="/masculino/basica" class="mega-menu__link">Gola comum</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu__col">
+          <h2 class="mega-menu__heading">Destaques</h2>
+          <ul class="mega-menu__list">
+            <li><a href="/masculino" class="mega-menu__link">Lançamentos</a></li>
+            <li><a href="/masculino" class="mega-menu__link">Mais vendidos</a></li>
+            <li><a href="/masculino" class="mega-menu__link">Últimas peças</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mega-menu: Coleções -->
+    <div class="mega-menu" id="mega-menu-colecoes" role="region" aria-label="Menu Coleções">
+      <div class="mega-menu__inner">
+        <div class="mega-menu__col">
+          <h2 class="mega-menu__heading">Todas as coleções</h2>
+          <ul class="mega-menu__list">
+            <li><a href="/colecoes/basica" class="mega-menu__link">Básica — permanente</a></li>
+            <li>
+              <a href="/colecoes/copa-brasil" class="mega-menu__link">
+                Copa Brasil 2026
+                <span class="mega-menu__badge">Sazonal</span>
+              </a>
+            </li>
+            <li><a href="/colecoes/brazilidades" class="mega-menu__link">Brazilidades</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu__col">
+          <h2 class="mega-menu__heading">Por gênero</h2>
+          <ul class="mega-menu__list">
+            <li><a href="/feminino" class="mega-menu__link">Feminino</a></li>
+            <li><a href="/masculino" class="mega-menu__link">Masculino</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu__col">
+          <h2 class="mega-menu__heading">A marca</h2>
+          <ul class="mega-menu__list">
+            <li><a href="/sobre" class="mega-menu__link">Sobre a LLAS</a></li>
+            <li><a href="/algodao" class="mega-menu__link">Por que algodão?</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </header><!-- /.site-header -->
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       DRAWER MOBILE
+       ═══════════════════════════════════════════════════════ -->
+  <div
+    class="mobile-drawer"
+    id="mobile-drawer"
+    aria-hidden="true"
+    aria-label="Menu de navegação"
   >
-    <span class="theme-toggle__icon" aria-hidden="true">◐</span>
-    <span class="theme-toggle__label">Alternar tema</span>
-  </button>
+    <!-- Backdrop -->
+    <div class="mobile-drawer__backdrop" aria-hidden="true"></div>
 
-  <!-- Painel de tokens (visível durante o bootstrap) -->
-  <div class="token-grid" role="list" aria-label="Paleta de cores da interface">
-    <div class="token-swatch" role="listitem">
-      <div class="token-swatch__cor" style="background-color: var(--cor-bg);" title="--cor-bg"></div>
-      <span class="token-swatch__nome">--cor-bg</span>
-    </div>
-    <div class="token-swatch" role="listitem">
-      <div class="token-swatch__cor" style="background-color: var(--cor-bg-alt);" title="--cor-bg-alt"></div>
-      <span class="token-swatch__nome">--cor-bg-alt</span>
-    </div>
-    <div class="token-swatch" role="listitem">
-      <div class="token-swatch__cor" style="background-color: var(--cor-texto);" title="--cor-texto"></div>
-      <span class="token-swatch__nome">--cor-texto</span>
-    </div>
-    <div class="token-swatch" role="listitem">
-      <div class="token-swatch__cor" style="background-color: var(--cor-texto-soft);" title="--cor-texto-soft"></div>
-      <span class="token-swatch__nome">--cor-texto-soft</span>
-    </div>
-    <div class="token-swatch" role="listitem">
-      <div class="token-swatch__cor" style="background-color: var(--cor-borda);" title="--cor-borda"></div>
-      <span class="token-swatch__nome">--cor-borda</span>
-    </div>
-    <div class="token-swatch" role="listitem">
-      <div class="token-swatch__cor" style="background-color: var(--cor-acento);" title="--cor-acento"></div>
-      <span class="token-swatch__nome">--cor-acento</span>
-    </div>
-    <div class="token-swatch" role="listitem">
-      <div class="token-swatch__cor" style="background-color: var(--cor-erro);" title="--cor-erro"></div>
-      <span class="token-swatch__nome">--cor-erro</span>
-    </div>
-    <div class="token-swatch" role="listitem">
-      <div class="token-swatch__cor" style="background-color: var(--cor-sucesso);" title="--cor-sucesso"></div>
-      <span class="token-swatch__nome">--cor-sucesso</span>
-    </div>
-  </div>
+    <!-- Painel -->
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
 
-  <p class="status">
-    Etapa 1 — <strong>Bootstrap</strong>. Design tokens + tema claro/escuro funcionando.
-  </p>
+      <!-- Topo do drawer -->
+      <div class="mobile-drawer__header">
+        <a href="/" class="mobile-drawer__logo" aria-label="LLAS — Início">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" aria-hidden="true">
+            <text x="200" y="120"
+                  font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+                  font-weight="900"
+                  font-size="130"
+                  letter-spacing="-2"
+                  text-anchor="middle"
+                  fill="currentColor">LLAS</text>
+            <text x="200" y="160"
+                  font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+                  font-weight="400"
+                  font-size="18"
+                  letter-spacing="3"
+                  text-anchor="middle"
+                  fill="currentColor">O BÁSICO REFINADO.</text>
+          </svg>
+        </a>
+        <button
+          class="mobile-drawer__close"
+          id="drawer-fechar"
+          aria-label="Fechar menu"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <line x1="4" y1="4"   x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="16" y1="4"  x2="4"  y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Nav accordion -->
+      <nav class="mobile-drawer__nav" aria-label="Navegação principal">
+
+        <!-- Feminino -->
+        <div class="mobile-drawer__item">
+          <button
+            class="mobile-drawer__trigger"
+            aria-expanded="false"
+            aria-controls="drawer-feminino"
+            type="button"
+          >
+            Feminino
+            <svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-drawer__sub" id="drawer-feminino" hidden>
+            <div class="mobile-drawer__sub-group">
+              <span class="mobile-drawer__sub-label">Coleções</span>
+              <a href="/feminino/basica"        class="mobile-drawer__sub-link">Básica</a>
+              <a href="/feminino/copa-brasil"   class="mobile-drawer__sub-link">Copa Brasil 2026</a>
+              <a href="/feminino/brazilidades"  class="mobile-drawer__sub-link">Brazilidades</a>
+            </div>
+            <div class="mobile-drawer__sub-group">
+              <span class="mobile-drawer__sub-label">Modelagens</span>
+              <a href="/feminino/basica/gola-alta" class="mobile-drawer__sub-link">Gola alta</a>
+              <a href="/feminino/basica"           class="mobile-drawer__sub-link">Gola comum</a>
+              <a href="/feminino/copa-brasil"      class="mobile-drawer__sub-link">Cropped</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Masculino -->
+        <div class="mobile-drawer__item">
+          <button
+            class="mobile-drawer__trigger"
+            aria-expanded="false"
+            aria-controls="drawer-masculino"
+            type="button"
+          >
+            Masculino
+            <svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-drawer__sub" id="drawer-masculino" hidden>
+            <div class="mobile-drawer__sub-group">
+              <span class="mobile-drawer__sub-label">Coleções</span>
+              <a href="/masculino/basica"       class="mobile-drawer__sub-link">Básica</a>
+              <a href="/masculino/copa-brasil"  class="mobile-drawer__sub-link">Copa Brasil 2026</a>
+              <a href="/masculino/brazilidades" class="mobile-drawer__sub-link">Brazilidades</a>
+            </div>
+            <div class="mobile-drawer__sub-group">
+              <span class="mobile-drawer__sub-label">Modelagens</span>
+              <a href="/masculino/basica/gola-alta" class="mobile-drawer__sub-link">Gola alta</a>
+              <a href="/masculino/basica"           class="mobile-drawer__sub-link">Gola comum</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coleções -->
+        <div class="mobile-drawer__item">
+          <button
+            class="mobile-drawer__trigger"
+            aria-expanded="false"
+            aria-controls="drawer-colecoes"
+            type="button"
+          >
+            Coleções
+            <svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-drawer__sub" id="drawer-colecoes" hidden>
+            <div class="mobile-drawer__sub-group">
+              <a href="/colecoes/basica"       class="mobile-drawer__sub-link">Básica — permanente</a>
+              <a href="/colecoes/copa-brasil"  class="mobile-drawer__sub-link">Copa Brasil 2026</a>
+              <a href="/colecoes/brazilidades" class="mobile-drawer__sub-link">Brazilidades</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Links diretos -->
+        <div class="mobile-drawer__item">
+          <a href="/sobre"   class="mobile-drawer__direct-link">Sobre</a>
+        </div>
+        <div class="mobile-drawer__item">
+          <a href="/algodao" class="mobile-drawer__direct-link">Por que algodão?</a>
+        </div>
+
+      </nav>
+    </div><!-- /.mobile-drawer__panel -->
+  </div><!-- /.mobile-drawer -->
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN — conteúdo temporário de bootstrap
+       ═══════════════════════════════════════════════════════ -->
+  <main>
+    <div style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 4rem 1rem;
+      text-align: center;
+    ">
+      <p style="font-size: 0.875rem; color: var(--cor-texto-soft); letter-spacing: 0.04em;">
+        Etapa 2 — <strong style="color: var(--cor-texto); font-weight: 500;">Header + mega-menu + footer</strong>
+      </p>
+
+      <!-- Swatches dos tokens -->
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 600px;
+      ">
+        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-bg);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-bg</p></div>
+        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-bg-alt);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-bg-alt</p></div>
+        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-texto);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-texto</p></div>
+        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-texto-soft);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-texto-soft</p></div>
+        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-acento);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-acento</p></div>
+        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-borda);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-borda</p></div>
+        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-erro);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-erro</p></div>
+        <div><div style="height:36px;border-radius:4px;border:1px solid var(--cor-borda);background:var(--cor-sucesso);"></div><p style="font-size:0.75rem;color:var(--cor-texto-soft);margin-top:0.25rem;font-family:monospace;">--cor-sucesso</p></div>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <!-- Missão -->
+      <div>
+        <a href="/" class="site-footer__logo" aria-label="LLAS — Início">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" aria-hidden="true">
+            <text x="200" y="120"
+                  font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+                  font-weight="900"
+                  font-size="130"
+                  letter-spacing="-2"
+                  text-anchor="middle"
+                  fill="currentColor">LLAS</text>
+            <text x="200" y="160"
+                  font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+                  font-weight="400"
+                  font-size="18"
+                  letter-spacing="3"
+                  text-anchor="middle"
+                  fill="currentColor">O BÁSICO REFINADO.</text>
+          </svg>
+        </a>
+        <p class="site-footer__desc">
+          Camisetas básicas em algodão 100% penteado. Fabricadas em Goiânia, GO.
+          Sem misturas sintéticas, sem acabamentos químicos.
+        </p>
+      </div>
+
+      <!-- Atendimento -->
+      <div>
+        <h3 class="site-footer__heading">Atendimento</h3>
+        <ul class="site-footer__links">
+          <li><a href="mailto:llasbrasil.oficial@gmail.com">llasbrasil.oficial@gmail.com</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <!-- Informações -->
+      <div>
+        <h3 class="site-footer__heading">Informações</h3>
+        <ul class="site-footer__links">
+          <li><a href="/trocas">Trocas e devoluções</a></li>
+          <li><a href="/politica-privacidade">Política de privacidade</a></li>
+          <li><a href="/termos">Termos de uso</a></li>
+          <li><a href="/faq">Perguntas frequentes</a></li>
+        </ul>
+      </div>
+
+      <!-- A marca -->
+      <div>
+        <h3 class="site-footer__heading">A marca</h3>
+        <ul class="site-footer__links">
+          <li><a href="/sobre">Sobre a LLAS</a></li>
+          <li><a href="/algodao">Por que algodão?</a></li>
+          <li><a href="/colecoes">Coleções</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /.site-footer__inner -->
+
+    <div class="site-footer__bottom">
+      <div class="site-footer__bottom-inner">
+        <p class="site-footer__legal">
+          © 2026 LLAS INDÚSTRIA E COMÉRCIO DE ROUPAS LTDA. CNPJ 66.740.417/0001-07
+        </p>
+        <p class="site-footer__tagline">O básico refinado.</p>
+      </div>
+    </div>
+
+  </footer><!-- /.site-footer -->
+
 
   <!-- JS -->
   <script type="module" src="/js/theme-toggle.js"></script>
+  <script type="module" src="/js/mega-menu.js"></script>
 
 </body>
 </html>

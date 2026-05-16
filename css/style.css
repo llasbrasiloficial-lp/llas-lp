@@ -1,0 +1,46 @@
+/* style.css — LLAS — Estilos globais */
+
+html {
+  transition:
+    background-color var(--transition-tema),
+    color var(--transition-tema);
+}
+
+body {
+  font-family: var(--ff-principal);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  color: var(--cor-texto);
+  background-color: var(--cor-bg);
+  line-height: var(--lh-base);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.drawer-open {
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cor-acento);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Troca de ícone de tema via CSS (sem JS) */
+[data-theme='light'] .icon-sun  { display: none; }
+[data-theme='light'] .icon-moon { display: block; }
+[data-theme='dark']  .icon-sun  { display: block; }
+[data-theme='dark']  .icon-moon { display: none; }
+
+/* Container padrão */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-inline: var(--padding-lateral);
+}

@@ -1,0 +1,114 @@
+/* footer.css — LLAS */
+
+.site-footer {
+  border-top: 1px solid var(--cor-borda);
+  background-color: var(--cor-bg-alt);
+  transition:
+    background-color var(--transition-tema),
+    border-color var(--transition-tema);
+}
+
+/* ── Grid de colunas ────────────────────────────────────── */
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--padding-lateral);
+}
+
+@media (min-width: 600px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .site-footer__inner {
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+/* ── Coluna 1: Missão ───────────────────────────────────── */
+.site-footer__logo {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+}
+
+.site-footer__logo svg {
+  height: 26px;
+  width: auto;
+  color: var(--cor-texto);
+  transition: color var(--transition-tema);
+}
+
+.site-footer__desc {
+  font-size: var(--fs-sm);
+  color: var(--cor-texto-soft);
+  line-height: var(--lh-relaxed);
+  max-width: 280px;
+}
+
+/* ── Colunas 2–4 ────────────────────────────────────────── */
+.site-footer__heading {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-texto-soft);
+  margin-bottom: var(--space-4);
+}
+
+.site-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.site-footer__links a {
+  font-size: var(--fs-sm);
+  color: var(--cor-texto);
+  transition: color var(--transition-padrao);
+}
+
+.site-footer__links a:hover {
+  color: var(--cor-acento);
+}
+
+/* ── Barra inferior ─────────────────────────────────────── */
+.site-footer__bottom {
+  border-top: 1px solid var(--cor-borda);
+  transition: border-color var(--transition-tema);
+}
+
+.site-footer__bottom-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--padding-lateral);
+}
+
+@media (min-width: 600px) {
+  .site-footer__bottom-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.site-footer__legal {
+  font-size: var(--fs-xs);
+  color: var(--cor-texto-soft);
+}
+
+.site-footer__tagline {
+  font-size: var(--fs-xs);
+  color: var(--cor-texto-soft);
+  letter-spacing: 0.06em;
+}

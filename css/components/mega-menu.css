@@ -1,0 +1,291 @@
+/* mega-menu.css — LLAS — Desktop panel + Mobile drawer */
+
+/* ═══════════════════════════════════════════════════════════
+   DESKTOP MEGA-MENU
+   Painel full-width que aparece abaixo do header (960px+)
+   ═══════════════════════════════════════════════════════════ */
+
+.mega-menu {
+  display: none; /* oculto no mobile */
+}
+
+@media (min-width: 960px) {
+  .mega-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-bg);
+    border-bottom: 1px solid var(--cor-borda);
+    box-shadow: var(--sombra-md);
+    z-index: var(--z-mega-menu);
+
+    /* Estado fechado */
+    opacity: 0;
+    transform: translateY(-6px);
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity var(--transition-padrao),
+      transform var(--transition-padrao),
+      visibility var(--transition-padrao),
+      background-color var(--transition-tema),
+      border-color var(--transition-tema);
+  }
+
+  .mega-menu.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mega-menu__inner {
+    display: flex;
+    gap: var(--space-8);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-7) var(--padding-lateral);
+  }
+
+  .mega-menu__col {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .mega-menu__heading {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cor-texto-soft);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--cor-borda);
+    transition: border-color var(--transition-tema);
+  }
+
+  .mega-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .mega-menu__link {
+    display: block;
+    font-size: var(--fs-base);
+    color: var(--cor-texto);
+    transition: color var(--transition-padrao);
+  }
+
+  .mega-menu__link:hover {
+    color: var(--cor-acento);
+  }
+
+  /* Badge "Sazonal" para Copa Brasil */
+  .mega-menu__badge {
+    display: inline-block;
+    margin-left: var(--space-2);
+    padding: 1px 5px;
+    background-color: var(--cor-bg-alt);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-xs);
+    color: var(--cor-texto-soft);
+    vertical-align: middle;
+    transition:
+      background-color var(--transition-tema),
+      border-color var(--transition-tema);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE DRAWER
+   Slide-in da esquerda com backdrop — oculto no desktop
+   ═══════════════════════════════════════════════════════════ */
+
+.mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-side-cart);
+  pointer-events: none;
+}
+
+.mobile-drawer.is-open {
+  pointer-events: auto;
+}
+
+/* Backdrop */
+.mobile-drawer__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity var(--transition-padrao);
+  cursor: pointer;
+}
+
+.mobile-drawer.is-open .mobile-drawer__backdrop {
+  opacity: 1;
+}
+
+/* Painel lateral */
+.mobile-drawer__panel {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: min(320px, 85vw);
+  background-color: var(--cor-bg);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform: translateX(-100%);
+  transition:
+    transform var(--transition-padrao),
+    background-color var(--transition-tema);
+}
+
+.mobile-drawer.is-open .mobile-drawer__panel {
+  transform: translateX(0);
+}
+
+/* Drawer: topo com logo + fechar */
+.mobile-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--padding-lateral);
+  height: 60px;
+  border-bottom: 1px solid var(--cor-borda);
+  flex-shrink: 0;
+  transition: border-color var(--transition-tema);
+}
+
+.mobile-drawer__logo svg {
+  height: 26px;
+  width: auto;
+  color: var(--cor-texto);
+  transition: color var(--transition-tema);
+}
+
+.mobile-drawer__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--cor-texto-soft);
+  border-radius: var(--radius-md);
+  transition:
+    color var(--transition-padrao),
+    background-color var(--transition-padrao);
+}
+
+.mobile-drawer__close:hover {
+  color: var(--cor-texto);
+  background-color: var(--cor-bg-alt);
+}
+
+/* Nav accordion */
+.mobile-drawer__nav {
+  padding-block: var(--space-3);
+}
+
+.mobile-drawer__item {
+  border-bottom: 1px solid var(--cor-borda);
+  transition: border-color var(--transition-tema);
+}
+
+/* Botão principal do accordion */
+.mobile-drawer__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-4) var(--padding-lateral);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cor-texto);
+  text-align: left;
+  transition:
+    color var(--transition-padrao),
+    background-color var(--transition-padrao);
+}
+
+.mobile-drawer__trigger:hover {
+  background-color: var(--cor-bg-alt);
+}
+
+.mobile-drawer__trigger-chevron {
+  flex-shrink: 0;
+  color: var(--cor-texto-soft);
+  transition: transform var(--transition-padrao);
+}
+
+.mobile-drawer__trigger[aria-expanded='true'] .mobile-drawer__trigger-chevron {
+  transform: rotate(180deg);
+}
+
+/* Sub-menu accordion */
+.mobile-drawer__sub {
+  background-color: var(--cor-bg-alt);
+  padding-bottom: var(--space-4);
+  transition: background-color var(--transition-tema);
+}
+
+.mobile-drawer__sub-group {
+  padding-inline: var(--padding-lateral);
+}
+
+.mobile-drawer__sub-label {
+  display: block;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-texto-soft);
+}
+
+.mobile-drawer__sub-link {
+  display: block;
+  padding-block: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--cor-texto);
+  transition: color var(--transition-padrao);
+}
+
+.mobile-drawer__sub-link:hover {
+  color: var(--cor-acento);
+}
+
+/* Link direto (ex: Sobre) */
+.mobile-drawer__direct-link {
+  display: block;
+  padding: var(--space-4) var(--padding-lateral);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cor-texto);
+  border-bottom: 1px solid var(--cor-borda);
+  transition:
+    color var(--transition-padrao),
+    background-color var(--transition-padrao),
+    border-color var(--transition-tema);
+}
+
+.mobile-drawer__direct-link:hover {
+  background-color: var(--cor-bg-alt);
+  color: var(--cor-acento);
+}
+
+/* Oculta o drawer no desktop */
+@media (min-width: 960px) {
+  .mobile-drawer {
+    display: none;
+  }
+}
