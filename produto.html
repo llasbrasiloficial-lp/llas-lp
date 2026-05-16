@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Atualizados por pdp.js -->
+  <title>Produto — LLAS</title>
+  <meta name="description" content="Camiseta em algodão 100% penteado. Sem misturas, sem atalhos. LLAS Brasil.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/components/header.css">
+  <link rel="stylesheet" href="/css/components/mega-menu.css">
+  <link rel="stylesheet" href="/css/components/product-card.css">
+  <link rel="stylesheet" href="/css/components/carousel.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/pages/plp.css">
+  <link rel="stylesheet" href="/css/pages/pdp.css">
+
+  <script>
+    (function () {
+      var s = localStorage.getItem('llas-theme');
+      var p = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', s || p);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- HEADER ══════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <button class="site-header__hamburger" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-drawer" type="button">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="2" y1="5" x2="18" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="15" x2="18" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="/" class="site-header__logo" aria-label="LLAS — Início">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="LLAS"><title>LLAS</title>
+          <text x="200" y="120" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="130" letter-spacing="-2" text-anchor="middle" fill="currentColor">LLAS</text>
+          <text x="200" y="160" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="18" letter-spacing="3" text-anchor="middle" fill="currentColor">O BÁSICO REFINADO.</text>
+        </svg>
+      </a>
+      <nav class="site-header__nav" aria-label="Navegação principal">
+        <button class="nav-item" data-menu="feminino" aria-expanded="false" aria-haspopup="true" type="button">Feminino<svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="nav-item" data-menu="masculino" aria-expanded="false" aria-haspopup="true" type="button">Masculino<svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="nav-item" data-menu="colecoes" aria-expanded="false" aria-haspopup="true" type="button">Coleções<svg class="nav-item__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <a href="/sobre" class="nav-item">Sobre</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="header-action header-action--search" aria-label="Buscar" type="button"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5" stroke="currentColor" stroke-width="1.5"/><line x1="12.5" y1="12.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+        <button class="header-action" data-theme-toggle aria-label="Ativar modo escuro" aria-pressed="false" type="button">
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3a7 7 0 1 0 7 7A5 5 0 0 1 10 3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.5" stroke="currentColor" stroke-width="1.5"/><line x1="10" y1="2" x2="10" y2="4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="10" y1="15.5" x2="10" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="10" x2="4.5" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="15.5" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="4.1" y1="4.1" x2="5.9" y2="5.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14.1" y1="14.1" x2="15.9" y2="15.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="4.1" y1="15.9" x2="5.9" y2="14.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14.1" y1="5.9" x2="15.9" y2="4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <button class="header-action" aria-label="Carrinho" type="button">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6.5 7.5V6a3.5 3.5 0 0 1 7 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="2.5" y="7.5" width="15" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span class="cart-badge" id="cart-badge" data-count="0" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div class="mega-menu" id="mega-menu-feminino" role="region" aria-label="Menu Feminino"><div class="mega-menu__inner"><div class="mega-menu__col"><h2 class="mega-menu__heading">Coleções</h2><ul class="mega-menu__list"><li><a href="/feminino/basica" class="mega-menu__link">Básica</a></li><li><a href="/feminino/copa-brasil" class="mega-menu__link">Copa Brasil 2026 <span class="mega-menu__badge">Sazonal</span></a></li><li><a href="/feminino/brazilidades" class="mega-menu__link">Brazilidades</a></li></ul></div><div class="mega-menu__col"><h2 class="mega-menu__heading">Modelagens</h2><ul class="mega-menu__list"><li><a href="/feminino/basica/gola-alta" class="mega-menu__link">Gola alta</a></li><li><a href="/feminino/basica" class="mega-menu__link">Gola comum</a></li><li><a href="/feminino/copa-brasil" class="mega-menu__link">Cropped</a></li></ul></div><div class="mega-menu__col"><h2 class="mega-menu__heading">Destaques</h2><ul class="mega-menu__list"><li><a href="/feminino" class="mega-menu__link">Lançamentos</a></li><li><a href="/feminino" class="mega-menu__link">Mais vendidos</a></li></ul></div></div></div>
+    <div class="mega-menu" id="mega-menu-masculino" role="region" aria-label="Menu Masculino"><div class="mega-menu__inner"><div class="mega-menu__col"><h2 class="mega-menu__heading">Coleções</h2><ul class="mega-menu__list"><li><a href="/masculino/basica" class="mega-menu__link">Básica</a></li><li><a href="/masculino/copa-brasil" class="mega-menu__link">Copa Brasil 2026 <span class="mega-menu__badge">Sazonal</span></a></li><li><a href="/masculino/brazilidades" class="mega-menu__link">Brazilidades</a></li></ul></div><div class="mega-menu__col"><h2 class="mega-menu__heading">Modelagens</h2><ul class="mega-menu__list"><li><a href="/masculino/basica/gola-alta" class="mega-menu__link">Gola alta</a></li><li><a href="/masculino/basica" class="mega-menu__link">Gola comum</a></li></ul></div><div class="mega-menu__col"><h2 class="mega-menu__heading">Destaques</h2><ul class="mega-menu__list"><li><a href="/masculino" class="mega-menu__link">Lançamentos</a></li><li><a href="/masculino" class="mega-menu__link">Mais vendidos</a></li></ul></div></div></div>
+    <div class="mega-menu" id="mega-menu-colecoes" role="region" aria-label="Menu Coleções"><div class="mega-menu__inner"><div class="mega-menu__col"><h2 class="mega-menu__heading">Todas as coleções</h2><ul class="mega-menu__list"><li><a href="/colecoes/basica" class="mega-menu__link">Básica — permanente</a></li><li><a href="/colecoes/copa-brasil" class="mega-menu__link">Copa Brasil 2026</a></li><li><a href="/colecoes/brazilidades" class="mega-menu__link">Brazilidades</a></li></ul></div><div class="mega-menu__col"><h2 class="mega-menu__heading">Por gênero</h2><ul class="mega-menu__list"><li><a href="/feminino" class="mega-menu__link">Feminino</a></li><li><a href="/masculino" class="mega-menu__link">Masculino</a></li></ul></div><div class="mega-menu__col"><h2 class="mega-menu__heading">A marca</h2><ul class="mega-menu__list"><li><a href="/sobre" class="mega-menu__link">Sobre a LLAS</a></li><li><a href="/algodao" class="mega-menu__link">Por que algodão?</a></li></ul></div></div></div>
+  </header>
+
+  <!-- DRAWER MOBILE ═══════════════════════════════════════ -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer__backdrop" aria-hidden="true"></div>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="mobile-drawer__header">
+        <a href="/" class="mobile-drawer__logo" aria-label="LLAS"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" aria-hidden="true"><text x="200" y="120" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="130" letter-spacing="-2" text-anchor="middle" fill="currentColor">LLAS</text><text x="200" y="160" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="18" letter-spacing="3" text-anchor="middle" fill="currentColor">O BÁSICO REFINADO.</text></svg></a>
+        <button class="mobile-drawer__close" id="drawer-fechar" aria-label="Fechar menu" type="button"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="4" y1="4" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="4" x2="4" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      </div>
+      <nav class="mobile-drawer__nav" aria-label="Navegação principal">
+        <div class="mobile-drawer__item"><button class="mobile-drawer__trigger" aria-expanded="false" aria-controls="drawer-feminino" type="button">Feminino<svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="mobile-drawer__sub" id="drawer-feminino" hidden><div class="mobile-drawer__sub-group"><span class="mobile-drawer__sub-label">Coleções</span><a href="/feminino/basica" class="mobile-drawer__sub-link">Básica</a><a href="/feminino/copa-brasil" class="mobile-drawer__sub-link">Copa Brasil 2026</a><a href="/feminino/brazilidades" class="mobile-drawer__sub-link">Brazilidades</a></div></div>
+        </div>
+        <div class="mobile-drawer__item"><button class="mobile-drawer__trigger" aria-expanded="false" aria-controls="drawer-masculino" type="button">Masculino<svg class="mobile-drawer__trigger-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 5l4.5 4.5L11.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="mobile-drawer__sub" id="drawer-masculino" hidden><div class="mobile-drawer__sub-group"><span class="mobile-drawer__sub-label">Coleções</span><a href="/masculino/basica" class="mobile-drawer__sub-link">Básica</a><a href="/masculino/copa-brasil" class="mobile-drawer__sub-link">Copa Brasil 2026</a><a href="/masculino/brazilidades" class="mobile-drawer__sub-link">Brazilidades</a></div></div>
+        </div>
+        <div class="mobile-drawer__item"><a href="/sobre" class="mobile-drawer__direct-link">Sobre</a></div>
+        <div class="mobile-drawer__item"><a href="/algodao" class="mobile-drawer__direct-link">Por que algodão?</a></div>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- MAIN ════════════════════════════════════════════════ -->
+  <main>
+
+    <!-- Breadcrumb -->
+    <nav id="breadcrumb" aria-label="Caminho de navegação"></nav>
+
+    <!-- Layout: galeria + info ───────────────────────────── -->
+    <div class="pdp-layout">
+
+      <!-- Galeria -->
+      <div class="pdp-galeria">
+        <div class="pdp-galeria__principal">
+          <img
+            id="pdp-img-principal"
+            class="pdp-galeria__img-principal"
+            src=""
+            alt=""
+            loading="eager"
+          >
+        </div>
+        <div class="pdp-galeria__miniaturas" id="pdp-miniaturas"></div>
+      </div>
+
+      <!-- Informações do produto -->
+      <div class="pdp-info">
+
+        <!-- Coleção + nome -->
+        <div>
+          <p class="pdp-info__colecao" id="pdp-colecao"></p>
+          <h1 class="pdp-info__nome" id="pdp-nome"></h1>
+          <p id="pdp-descricao" style="font-size: var(--fs-sm); color: var(--cor-texto-soft); margin-top: var(--space-2); line-height: var(--lh-relaxed);"></p>
+        </div>
+
+        <!-- Preço real (oculto quando preco === 0) -->
+        <div id="pdp-preco-wrapper">
+          <p class="pdp-info__preco-valor" id="pdp-preco"></p>
+        </div>
+
+        <!-- Estado "Em breve" (visível quando preco === 0) -->
+        <div class="pdp-em-breve" id="pdp-em-breve">
+          <p class="pdp-em-breve__titulo">Em breve</p>
+          <p class="pdp-em-breve__texto">
+            Faça parte da lista — avisaremos quando esta peça estiver disponível.
+          </p>
+          <a
+            href="https://wa.me/55?text=Quero+ser+avisado+quando+a+LLAS+lançar+seus+produtos"
+            class="pdp-em-breve__btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Avisar quando lançar
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <hr class="pdp-divisor">
+
+        <!-- Seletor de cor -->
+        <div>
+          <div class="pdp-info__cor-header">
+            <span class="pdp-label">Cor:</span>
+            <span class="pdp-info__cor-nome" id="pdp-cor-nome"></span>
+          </div>
+          <div class="pdp-info__swatches" id="pdp-swatches" role="group" aria-label="Selecionar cor"></div>
+        </div>
+
+        <!-- Seletor de tamanho -->
+        <div id="pdp-form">
+          <div class="pdp-info__tamanho-header">
+            <span class="pdp-label">Tamanho</span>
+            <button class="pdp-tabela-link" id="pdp-tabela-link" type="button">
+              Ver tabela de medidas
+            </button>
+          </div>
+          <div class="pdp-info__tamanhos" id="pdp-tamanhos" role="group" aria-label="Selecionar tamanho"></div>
+        </div>
+
+        <!-- Adicionar ao carrinho -->
+        <button
+          class="pdp-add-cart"
+          id="pdp-add-cart"
+          type="button"
+          disabled
+          title="Selecione um tamanho"
+        >
+          Selecione um tamanho
+        </button>
+
+        <hr class="pdp-divisor">
+
+        <!-- Detalhes técnicos -->
+        <div class="pdp-detalhes" id="pdp-detalhes"></div>
+
+      </div><!-- /.pdp-info -->
+    </div><!-- /.pdp-layout -->
+
+
+    <!-- Por que esta peça é diferente ────────────────────── -->
+    <section class="pdp-diferenciais" aria-labelledby="pdp-dif-titulo">
+      <h2 class="pdp-diferenciais__titulo" id="pdp-dif-titulo">Por que esta peça é diferente</h2>
+      <div class="pdp-diferenciais__grid">
+
+        <div class="pdp-diferencial">
+          <h3 class="pdp-diferencial__titulo">Fio penteado 30/1</h3>
+          <p class="pdp-diferencial__texto">
+            O algodão penteado passa por remoção extra de fibras curtas e impurezas.
+            Resultado: toque mais macio, superfície mais uniforme e maior resistência
+            a ciclos de lavagem.
+          </p>
+        </div>
+
+        <div class="pdp-diferencial">
+          <h3 class="pdp-diferencial__titulo">180 g/m² — sem excessos</h3>
+          <p class="pdp-diferencial__texto">
+            Gramatura calibrada para o clima brasileiro: encorpada o suficiente para
+            não marcar por transparência, leve o suficiente para usar o ano todo.
+            Sem elastano, sem poliéster.
+          </p>
+        </div>
+
+        <div class="pdp-diferencial">
+          <h3 class="pdp-diferencial__titulo">Sem acabamentos químicos</h3>
+          <p class="pdp-diferencial__texto">
+            Não usamos formaldeído (classificado como carcinógeno Grupo 1 pela IARC),
+            tratamentos antimicrobianos (registrados como pesticidas pela EPA) nem
+            agentes repelentes PFAS. O algodão de qualidade não precisa de nenhum desses tratamentos.
+          </p>
+          <p class="pdp-diferencial__fonte">Fontes: IARC Monograph 100F; EPA Antimicrobial Registration; ECHA REACH Annexo XVII.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Cross-sell ────────────────────────────────────────── -->
+    <section id="pdp-cross-sell" class="pdp-cross-sell carrossel" aria-labelledby="cross-sell-titulo">
+      <div class="carrossel__cabecalho">
+        <h2 class="carrossel__titulo" id="cross-sell-titulo">Combina com</h2>
+        <div class="carrossel__nav">
+          <button class="carrossel-btn" id="cross-sell-prev" aria-label="Ver anteriores" type="button">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2.5L4.5 7 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="carrossel-btn" id="cross-sell-next" aria-label="Ver mais" type="button">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2.5L9.5 7 5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="carrossel__track" id="cross-sell-track" aria-live="polite"></div>
+    </section>
+
+
+    <!-- Disclaimer ────────────────────────────────────────── -->
+    <div class="pdp-disclaimer" role="note">
+      Nossas peças são vestuário, não produtos de saúde. As informações sobre fibras e
+      processos têxteis citadas neste site têm caráter educativo e remetem a normativas
+      e estudos públicos (REACH/ECHA, Inmetro, IARC, EPA). Para condições dermatológicas
+      específicas, consulte um profissional de saúde.
+    </div>
+
+  </main>
+
+
+  <!-- Modal: tabela de medidas ══════════════════════════════ -->
+  <div
+    class="tabela-modal"
+    id="tabela-modal"
+    aria-hidden="true"
+    aria-label="Tabela de medidas"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="tabela-modal__backdrop" aria-hidden="true"></div>
+    <div class="tabela-modal__painel">
+      <div class="tabela-modal__header">
+        <h2 class="tabela-modal__titulo">Tabela de medidas</h2>
+        <button class="tabela-modal__fechar" id="tabela-fechar" aria-label="Fechar tabela" type="button">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><line x1="3" y1="3" x2="15" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="15" y1="3" x2="3" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="tabela-modal__corpo">
+
+        <!-- Feminino -->
+        <table class="tabela-medidas" aria-label="Medidas femininas">
+          <caption style="text-align:left; font-size:var(--fs-xs); font-weight:var(--fw-bold); letter-spacing:0.08em; text-transform:uppercase; color:var(--cor-texto-soft); padding-bottom:var(--space-3);">Feminino</caption>
+          <thead>
+            <tr>
+              <th scope="col">Tam.</th>
+              <th scope="col">Busto</th>
+              <th scope="col">Cintura</th>
+              <th scope="col">Comprimento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>P</td><td>88 cm</td><td>70 cm</td><td>58 cm</td></tr>
+            <tr><td>M</td><td>92 cm</td><td>74 cm</td><td>60 cm</td></tr>
+            <tr><td>G</td><td>96 cm</td><td>78 cm</td><td>62 cm</td></tr>
+          </tbody>
+        </table>
+
+        <br>
+
+        <!-- Masculino -->
+        <table class="tabela-medidas" aria-label="Medidas masculinas">
+          <caption style="text-align:left; font-size:var(--fs-xs); font-weight:var(--fw-bold); letter-spacing:0.08em; text-transform:uppercase; color:var(--cor-texto-soft); padding-bottom:var(--space-3);">Masculino</caption>
+          <thead>
+            <tr>
+              <th scope="col">Tam.</th>
+              <th scope="col">Tórax</th>
+              <th scope="col">Ombro</th>
+              <th scope="col">Comprimento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>P</td><td>96 cm</td><td>44 cm</td><td>68 cm</td></tr>
+            <tr><td>M</td><td>100 cm</td><td>46 cm</td><td>70 cm</td></tr>
+            <tr><td>G</td><td>104 cm</td><td>48 cm</td><td>72 cm</td></tr>
+            <tr><td>GG</td><td>108 cm</td><td>50 cm</td><td>74 cm</td></tr>
+          </tbody>
+        </table>
+
+        <p class="tabela-modal__nota">
+          Medidas aproximadas. Variação de ±2 cm. Para dúvidas sobre tamanho,
+          entre em contato via WhatsApp.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER ══════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <a href="/" class="site-footer__logo" aria-label="LLAS"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" aria-hidden="true"><text x="200" y="120" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="130" letter-spacing="-2" text-anchor="middle" fill="currentColor">LLAS</text><text x="200" y="160" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="18" letter-spacing="3" text-anchor="middle" fill="currentColor">O BÁSICO REFINADO.</text></svg></a>
+        <p class="site-footer__desc">Camisetas em algodão 100% penteado. Fabricadas em Goiânia, GO.</p>
+      </div>
+      <div><h3 class="site-footer__heading">Atendimento</h3><ul class="site-footer__links"><li><a href="mailto:llasbrasil.oficial@gmail.com">llasbrasil.oficial@gmail.com</a></li><li><a href="#">WhatsApp</a></li></ul></div>
+      <div><h3 class="site-footer__heading">Informações</h3><ul class="site-footer__links"><li><a href="/trocas">Trocas e devoluções</a></li><li><a href="/politica-privacidade">Política de privacidade</a></li><li><a href="/termos">Termos de uso</a></li><li><a href="/faq">Perguntas frequentes</a></li></ul></div>
+      <div><h3 class="site-footer__heading">A marca</h3><ul class="site-footer__links"><li><a href="/sobre">Sobre a LLAS</a></li><li><a href="/algodao">Por que algodão?</a></li><li><a href="/colecoes">Coleções</a></li></ul></div>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="site-footer__bottom-inner">
+        <p class="site-footer__legal">© 2026 LLAS INDÚSTRIA E COMÉRCIO DE ROUPAS LTDA. CNPJ 66.740.417/0001-07</p>
+        <p class="site-footer__tagline">O básico refinado.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/theme-toggle.js"></script>
+  <script type="module" src="/js/mega-menu.js"></script>
+  <script type="module" src="/js/pdp.js"></script>
+
+</body>
+</html>
