@@ -12,6 +12,15 @@ if (slider) {
   let indice = 0;
   let timer  = null;
 
+  /* Slides com fundo escuro precisam de controles claros */
+  const FUNDOS_ESCUROS = ['hero-slide--escuro', 'hero-slide--tinta'];
+
+  function atualizarControles() {
+    const slideAtiva = slides[indice];
+    const fundoEscuro = FUNDOS_ESCUROS.some(cls => slideAtiva.classList.contains(cls));
+    slider.classList.toggle('hero-slider--controles-claros', fundoEscuro);
+  }
+
   function irPara(i) {
     slides[indice].classList.remove('is-active');
     dots[indice]?.classList.remove('is-active');
@@ -22,7 +31,12 @@ if (slider) {
     slides[indice].classList.add('is-active');
     dots[indice]?.classList.add('is-active');
     dots[indice]?.setAttribute('aria-selected', 'true');
+
+    atualizarControles();
   }
+
+  /* Inicializa cor dos controles conforme o slide 1 (fundo escuro) */
+  atualizarControles();
 
   function iniciarAutoplay() {
     clearInterval(timer);
