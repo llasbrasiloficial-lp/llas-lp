@@ -1,11 +1,11 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/feminino/:colecao/:slug",  "destination": "/produto.html?genero=feminino&colecao=:colecao&slug=:slug" },
-    { "source": "/masculino/:colecao/:slug", "destination": "/produto.html?genero=masculino&colecao=:colecao&slug=:slug" },
-    { "source": "/feminino/:colecao",        "destination": "/colecao.html?genero=feminino&colecao=:colecao" },
-    { "source": "/masculino/:colecao",       "destination": "/colecao.html?genero=masculino&colecao=:colecao" },
-    { "source": "/feminino",                 "destination": "/genero.html?genero=feminino" },
-    { "source": "/masculino",                "destination": "/genero.html?genero=masculino" },
-    { "source": "/colecoes/:slug",           "destination": "/colecao-manifesto.html?slug=:slug" }
+    { "source": "/feminino/:colecao/:slug",  "destination": "/produto.html" },
+    { "source": "/masculino/:colecao/:slug", "destination": "/produto.html" },
+    { "source": "/feminino/:colecao",        "destination": "/colecao.html" },
+    { "source": "/masculino/:colecao",       "destination": "/colecao.html" },
+    { "source": "/feminino",                 "destination": "/genero.html" },
+    { "source": "/masculino",                "destination": "/genero.html" }
   ]
 }

@@ -11,9 +11,12 @@ import {
 } from './produto-service.js';
 
 /* ── Parâmetros da URL ──────────────────────────────────── */
-const params  = new URLSearchParams(window.location.search);
-const genero  = params.get('genero');  // 'feminino' | 'masculino'
-const colecao = params.get('colecao'); // 'basica' | 'copa-brasil' | null
+/* Lê genero e colecao do pathname (os rewrites do Vercel não expõem
+   query params ao client — o browser só vê a URL limpa) */
+const _partes = window.location.pathname.split('/').filter(Boolean);
+const genero  = _partes[0] || null; // 'feminino' | 'masculino'
+const colecao = _partes[1] || null; // 'basica' | 'copa-brasil' | null
+const params  = new URLSearchParams(window.location.search); // para outros usos
 
 /* ── Render: card de produto (igual ao home.js) ─────────── */
 function renderCard(produto) {

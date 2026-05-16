@@ -16,10 +16,14 @@ import { initCarrossel } from './carousel.js';
 import { addItem, atualizarBadge } from './cart.js';
 
 /* ── URL params ─────────────────────────────────────────── */
+/* Lê genero/colecao/slug do pathname — os rewrites do Vercel não
+   expõem query params ao client (browser só vê a URL limpa).
+   A cor continua como query param (?cor=carvao) pois o JS a insere. */
+const _partes = window.location.pathname.split('/').filter(Boolean);
+const genero  = _partes[0] || null; // 'feminino' | 'masculino'
+const colecao = _partes[1] || null; // 'basica' | 'copa-brasil'
+const slug    = _partes[2] || null; // 'gola-alta'
 const params  = new URLSearchParams(window.location.search);
-const genero  = params.get('genero');
-const colecao = params.get('colecao');
-const slug    = params.get('slug');
 
 /* ── Estado ─────────────────────────────────────────────── */
 let produto      = null;
